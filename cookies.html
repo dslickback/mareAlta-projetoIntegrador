@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Cookies - MaréAlta</title>
+  
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- CSS da Página -->
+  <link rel="stylesheet" href="cookies.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO PRINCIPAL (Fixo & Transparente) -->
+  <header id="cabecalho-principal">
+    <div class="container-cabecalho">
+      <!-- Logo com Imagem -->
+      <a href="index.html" class="logo">
+        <img src="unnamed.png" alt="MaréAlta" class="icone-logo">
+      </a>
+
+      <!-- Menu de Navegação -->
+      <nav class="menu-navegacao">
+        <a href="index.html">Início</a>
+        <a href="colecao.html">Coleção</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+
+      <!-- Ações (Entrar e Carrinho) -->
+      <div class="acoes-cabecalho">
+        <button class="botao-entrar">Entrar</button>
+        <button class="botao-carrinho" aria-label="Carrinho de compras">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- BANNER ESCURO DE COOKIES -->
+  <section class="banner-cookies">
+    <div class="container-banner">
+      <h1>Política de Cookies</h1>
+      <p class="data-atualizacao">Vigência a partir de 1º de janeiro de 2026</p>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL DE COOKIES -->
+  <main class="conteudo-cookies">
+    <div class="container-texto">
+
+      <!-- O QUE SÃO COOKIES -->
+      <section class="topico-cookies">
+        <h2>O que são cookies?</h2>
+        <p>Cookies são pequenos arquivos de texto armazenados no seu dispositivo quando você visita um site. Eles nos ajudam a reconhecer sua sessão, lembrar preferências e entender como você interage com o conteúdo. Você pode gerenciar suas preferências a qualquer momento abaixo.</p>
+      </section>
+
+      <!-- GERENCIAR PREFERÊNCIAS DE COOKIES -->
+      <section class="topico-cookies">
+        <h2>Gerenciar preferências de cookies</h2>
+        
+        <div class="lista-cards-cookies">
+          
+          <!-- Card 1: Essenciais (Obrigatório / Sempre Ativo) -->
+          <div class="card-cookie">
+            <div class="card-info">
+              <h3>Cookies essenciais <span class="badge-obrigatorio">Obrigatório</span></h3>
+              <p>Necessários para o funcionamento básico do site — gestão de login, sacola de compras, preferências de idioma. Não podem ser desativados.</p>
+              <div class="tag-list">
+                <span class="tag-item">sessao_id</span>
+                <span class="tag-item">carrinho_id</span>
+                <span class="tag-item">csrf_token</span>
+              </div>
+            </div>
+            <div class="card-acao">
+              <label class="switch">
+                <input type="checkbox" checked disabled aria-label="Cookies essenciais obrigatórios">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Card 2: Desempenho -->
+          <div class="card-cookie">
+            <div class="card-info">
+              <h3>Cookies de desempenho</h3>
+              <p>Coletam informações anônimas sobre como você usa o site para nos ajudar a melhorar a experiência (Google Analytics, Hotjar).</p>
+              <div class="tag-list">
+                <span class="tag-item">ga_id</span>
+                <span class="tag-item">hotjar_id</span>
+                <span class="tag-item">performance</span>
+              </div>
+            </div>
+            <div class="card-acao">
+              <label class="switch">
+                <input type="checkbox" id="cookie-desempenho" aria-label="Ativar cookies de desempenho">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Card 3: Funcionais -->
+          <div class="card-cookie">
+            <div class="card-info">
+              <h3>Cookies funcionais</h3>
+              <p>Permitem que o site lembre suas preferências — como tamanho de grade na exibição, tema e filtros aplicados.</p>
+              <div class="tag-list">
+                <span class="tag-item">pref_grade</span>
+                <span class="tag-item">filtro_categoria</span>
+              </div>
+            </div>
+            <div class="card-acao">
+              <label class="switch">
+                <input type="checkbox" id="cookie-funcionais" aria-label="Ativar cookies funcionais">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Card 4: Marketing -->
+          <div class="card-cookie">
+            <div class="card-info">
+              <h3>Cookies de marketing</h3>
+              <p>Usados para exibir anúncios relevantes em outras plataformas (Meta Pixel, Google Ads). Compartilhamos dados de navegação com parceiros de publicidade.</p>
+              <div class="tag-list">
+                <span class="tag-item">fbp</span>
+                <span class="tag-item">gads</span>
+                <span class="tag-item">tt_pixel</span>
+              </div>
+            </div>
+            <div class="card-acao">
+              <label class="switch">
+                <input type="checkbox" id="cookie-marketing" aria-label="Ativar cookies de marketing">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <button type="button" class="btn-salvar-preferencias">Salvar preferências</button>
+      </section>
+
+      <!-- COMO DESATIVAR COOKIES -->
+      <section class="topico-cookies">
+        <h2>Como desativar cookies pelo navegador</h2>
+        <ul class="lista-instrucoes-navegador">
+          <li><strong>Chrome:</strong> Configurações &rarr; Privacidade e segurança &rarr; Cookies.</li>
+          <li><strong>Firefox:</strong> Opções &rarr; Privacidade e Segurança &rarr; Cookies e dados do site.</li>
+          <li><strong>Safari:</strong> Preferências &rarr; Privacidade &rarr; Gerenciar dados do site.</li>
+          <li><strong>Edge:</strong> Configurações &rarr; Cookies e permissões do site.</li>
+        </ul>
+        <p class="nota-desativacao">A desativação de cookies essenciais pode prejudicar o funcionamento do site, como manter itens na sacola ou permanecer conectado.</p>
+      </section>
+
+      <!-- VALIDADE DOS COOKIES -->
+      <section class="topico-cookies">
+        <h2>Validade dos cookies</h2>
+        
+        <div class="tabela-validade">
+          <div class="linha-tabela linha-impar">
+            <div class="coluna-tipo">Sessão</div>
+            <div class="coluna-prazo">Expiram ao fechar o navegador</div>
+          </div>
+          <div class="linha-tabela linha-par">
+            <div class="coluna-tipo">Persistentes (curto prazo)</div>
+            <div class="coluna-prazo">Até 30 dias</div>
+          </div>
+          <div class="linha-tabela linha-impar">
+            <div class="coluna-tipo">Persistentes (analytics)</div>
+            <div class="coluna-prazo">Até 13 meses</div>
+          </div>
+          <div class="linha-tabela linha-par">
+            <div class="coluna-tipo">Marketing</div>
+            <div class="coluna-prazo">Até 180 dias</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- RODAPÉ PRINCIPAL -->
+  <footer class="rodape-principal">
+    <div class="container-rodape">
+      
+      <!-- Coluna 1: Marca -->
+      <div class="coluna-rodape marca">
+        <div class="logo-rodape">
+          <img src="unnamed.png" alt="MaréAlta" class="icone-logo">
+        </div>
+        <p class="nome-marca">MARÉ ALTA</p>
+        <p class="descricao-marca">Moda praia premium com alma brasileira, feita para quem vive o verão com estilo.</p>
+      </div>
+
+      <!-- Coluna 2: Navegação -->
+      <div class="coluna-rodape">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="colecao.html">Coleção</a></li>
+          <li><a href="index.html#sobre">Sobre nós</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Categorias -->
+      <div class="coluna-rodape">
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="colecao.html">Biquínis</a></li>
+          <li><a href="colecao.html">Maiôs</a></li>
+          <li><a href="colecao.html">Saídas de praia</a></li>
+          <li><a href="colecao.html">Acessórios</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4: Atendimento -->
+      <div class="coluna-rodape">
+        <h4>Atendimento</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Trocas e devoluções</a></li>
+          <li><a href="#">Rastrear pedido</a></li>
+          <li><a href="#">Fale conosco</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Barra Inferior do Rodapé -->
+    <div class="barra-inferior-rodape">
+      <div class="container-barra-inferior">
+        <p>© 2026 MaréAlta. Todos os direitos reservados.</p>
+        <div class="links-legais">
+          <a href="privacidade.html">Privacidade</a>
+          <a href="termos.html">Termos de uso</a>
+          <a href="cookies.html" class="ativo">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL DE AUTENTICAÇÃO -->
+  <div id="modal-auth" class="modal-sobreposicao">
+    <div class="modal-conteudo">
+      <button id="fechar-modal" class="btn-fechar" aria-label="Fechar modal">&times;</button>
+      
+      <div id="container-abas" class="modal-abas">
+        <button class="aba-btn ativo" data-tab="login">Entrar</button>
+        <button class="aba-btn" data-tab="cadastro">Cadastrar</button>
+      </div>
+
+      <!-- Tab Login -->
+      <div id="tab-login" class="conteudo-aba ativo">
+        <form id="form-login">
+          <div class="campo-grupo">
+            <label for="login-email">E-mail</label>
+            <input type="email" id="login-email" placeholder="seu@email.com" required>
+          </div>
+          <div class="campo-grupo">
+            <label for="login-senha">Senha</label>
+            <div class="wrapper-senha">
+              <input type="password" id="login-senha" placeholder="Sua senha" required>
+              <button type="button" class="btn-toggle-senha" aria-label="Mostrar senha"></button>
+            </div>
+          </div>
+          <a href="#" id="link-ir-recuperar" class="link-esqueceu-senha">Esqueceu sua senha?</a>
+          <button type="submit" id="btn-login-submit" class="btn-submit">Entrar</button>
+        </form>
+      </div>
+
+      <!-- Tab Cadastro -->
+      <div id="tab-cadastro" class="conteudo-aba">
+        <form id="form-cadastro">
+          <div class="campo-grupo">
+            <label for="cad-nome">Nome Completo</label>
+            <input type="text" id="cad-nome" placeholder="Seu nome" required>
+          </div>
+          <div class="campo-grupo">
+            <label for="cad-email">E-mail</label>
+            <input type="email" id="cad-email" placeholder="seu@email.com" required>
+          </div>
+          <div class="campo-grupo">
+            <label for="cad-senha">Senha</label>
+            <div class="wrapper-senha">
+              <input type="password" id="cad-senha" placeholder="Crie uma senha" required>
+              <button type="button" class="btn-toggle-senha" aria-label="Mostrar senha"></button>
+            </div>
+          </div>
+          <div class="campo-grupo">
+            <label for="cad-confirmar">Confirmar Senha</label>
+            <div class="wrapper-senha">
+              <input type="password" id="cad-confirmar" placeholder="Repita a senha" required>
+              <button type="button" class="btn-toggle-senha" aria-label="Mostrar senha"></button>
+            </div>
+          </div>
+          <button type="submit" id="btn-cadastro-submit" class="btn-submit">Criar Conta</button>
+        </form>
+      </div>
+
+      <!-- Tab Recuperar Senha -->
+      <div id="tab-recuperar" class="conteudo-aba">
+        <h3>Recuperar Senha</h3>
+        <p class="instrucao-recuperar">Informe o e-mail cadastrado para receber as instruções de redefinição.</p>
+        <form id="form-recuperar">
+          <div class="campo-grupo">
+            <label for="rec-email">E-mail</label>
+            <input type="email" id="rec-email" placeholder="seu@email.com" required>
+          </div>
+          <button type="submit" class="btn-submit">Enviar Link</button>
+          <a href="#" id="link-voltar-login" class="link-voltar">Voltar para o Login</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rastrear Pedido - MaréAlta</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="rastreio.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO PRINCIPAL -->
+  <header id="cabecalho-principal">
+    <div class="container-cabecalho">
+      <a href="index.html" class="logo">
+        <img src="unnamed.png" alt="MaréAlta" class="icone-logo">
+      </a>
+      <nav class="menu-navegacao">
+        <a href="index.html">Início</a>
+        <a href="colecao.html">Coleção</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+      <div class="acoes-cabecalho">
+        <button class="botao-entrar">Entrar</button>
+        <button class="botao-carrinho" aria-label="Carrinho de compras">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- BANNER FIXO TOPO -->
+  <section class="banner-rastreio">
+    <div class="container-banner">
+      <div class="icone-pacote-wrapper">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#23a1b0" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      </div>
+      <h1>Rastrear Pedido</h1>
+      <p class="subtitulo-banner">Acompanhe sua encomenda em tempo real com facilidade e transparência</p>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO DA PÁGINA (COM TRANSIÇÃO) -->
+  <main class="conteudo-rastreio">
+    
+    <!-- BARRA DE BUSCA (PERSISTENTE) -->
+    <div class="container-busca-rastreio">
+      <form id="form-rastreio" class="bar-busca-rastreio">
+        <svg class="icone-lupa" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#888888" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="input-codigo-rastreio" placeholder="Digite o código do pedido (ex: MA-2026-8841)" required autocomplete="off">
+        <button type="submit" class="btn-buscar-rastreio">Rastrear</button>
+      </form>
+      <p class="dica-codigo">O código de rastreamento se encontra no e-mail de confirmação enviado logo após a sua compra.</p>
+    </div>
+
+    <!-- VISÃO 1: INICIAL (Instruções e códigos de teste) -->
+    <div id="visao-inicial" class="painel-transicao ativo">
+      <div class="caixa-alerta-teste">
+        <svg class="icone-info" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#197b88" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <p><strong>Quer testar?</strong> Use os códigos <span class="codigo-destaque">MA-2026-8841</span> ou <span class="codigo-destaque">MA-2026-7102</span></p>
+      </div>
+
+      <section class="secao-passos-rastreio">
+        <h2 class="titulo-secao-passos">Como funciona o rastreamento MaréAlta</h2>
+        <div class="grid-passos">
+          <div class="card-passo"><div class="numero-passo">01</div><h3>Confirmação</h3><p>Seu pedido é aprovado e nossa equipe inicia a separação das suas peças artesanais.</p></div>
+          <div class="card-passo"><div class="numero-passo">02</div><h3>Envio & Código</h3><p>Geramos a nota fiscal e enviamos seu código de rastreio exclusivo para o seu e-mail.</p></div>
+          <div class="card-passo"><div class="numero-passo">03</div><h3>Transporte</h3><p>Acompanhe cada etapa de locomoção da sua encomenda em tempo real até a sua região.</p></div>
+          <div class="card-passo"><div class="numero-passo">04</div><h3>Entrega</h3><p>Sua caixinha recheada com o melhor da moda praia chega na sua casa com todo carinho.</p></div>
+        </div>
+      </section>
+
+      <section class="secao-duvidas-rastreio">
+        <h2>Dúvidas Frequentes sobre Entregas</h2>
+        <div class="grid-duvidas">
+          <div class="card-duvida"><h4>Em quanto tempo o código é ativado?</h4><p>O código é ativado em até 24 horas úteis após o despacho do pedido pela transportadora.</p></div>
+          <div class="card-duvida"><h4>Quais são os horários de entrega?</h4><p>As entregas ocorrem de segunda a sexta-feira, das 08h às 18h, e aos sábados até as 12h.</p></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- VISÃO 2: RESULTADO DO RASTREIO (Conforme o print) -->
+    <div id="visao-resultado" class="painel-transicao oculto">
+      
+      <!-- BOTÃO DE VOLTAR PARA OS CÓDIGOS -->
+      <div class="container-botao-voltar">
+        <button id="btn-voltar-codigos" class="btn-voltar-codigos">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          Voltar para os códigos
+        </button>
+      </div>
+
+      <!-- CARD 1: DETALHES DO PEDIDO -->
+      <div class="card-detalhes-pedido">
+        <div class="cabecalho-card-detalhes">
+          <div>
+            <span class="label-pequeno">Código do pedido</span>
+            <h2 id="res-codigo-pedido">MA-2026-7102</h2>
+          </div>
+          <span class="tag-status" id="res-status-tag">A caminho</span>
+        </div>
+        <div class="grid-informacoes-pedido">
+          <div class="item-info"><span class="label-info">Produtos</span><strong id="res-produtos">Bermuda Floral Surf</strong></div>
+          <div class="item-info"><span class="label-info">Transportadora</span><strong id="res-transportadora">Correios (SEDEX)</strong></div>
+          <div class="item-info"><span class="label-info">Previsão de entrega</span><strong id="res-previsao" class="texto-destaque-verde">12 de julho de 2026</strong></div>
+        </div>
+      </div>
+
+      <!-- CARD 2: PROGRESSO DA ENTREGA -->
+      <div class="card-progresso-entrega">
+        <h3>Progresso da entrega</h3>
+        <div class="linha-progresso-wrapper">
+          <div class="linha-trilho"></div>
+          <div class="linha-preenchimento" id="res-barra-progresso"></div>
+          <div class="etapas-progresso">
+            <div class="etapa-item" data-step="1"><div class="circulo-etapa"></div><span>Pedido</span></div>
+            <div class="etapa-item" data-step="2"><div class="circulo-etapa"></div><span>Separação</span></div>
+            <div class="etapa-item" data-step="3"><div class="circulo-etapa"></div><span>Enviado</span></div>
+            <div class="etapa-item" data-step="4"><div class="circulo-etapa"></div><span>Trânsito</span></div>
+            <div class="etapa-item" data-step="5"><div class="circulo-etapa"></div><span>Saiu</span></div>
+            <div class="etapa-item" data-step="6"><div class="circulo-etapa"></div><span>Entregue</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3: HISTÓRICO DE MOVIMENTAÇÕES -->
+      <div class="card-historico-movimentacoes">
+        <h3>Histórico de movimentações</h3>
+        <div class="timeline-historico" id="res-historico-lista">
+          <!-- Gerado via JavaScript -->
+        </div>
+      </div>
+
+      <!-- CARD 4: SUPORTE WHATSAPP -->
+      <div class="card-suporte-ajuda">
+        <div class="texto-suporte">
+          <h4>Precisa de ajuda?</h4>
+          <p>Nossa equipe responde em até 2h úteis.</p>
+        </div>
+        <a href="https://wa.me/5500000000000" target="_blank" class="btn-whatsapp">Whatsapp</a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- RODAPÉ PRINCIPAL -->
+  <footer class="rodape-principal">
+    <div class="container-rodape">
+      <div class="coluna-rodape marca">
+        <div class="logo-rodape"><img src="unnamed.png" alt="MaréAlta" class="icone-logo"></div>
+        <p class="nome-marca">MARÉ ALTA</p>
+        <p class="descricao-marca">Moda praia premium com alma brasileira, feita para quem vive o verão com estilo.</p>
+      </div>
+      <div class="coluna-rodape">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="colecao.html">Coleção</a></li>
+          <li><a href="index.html#sobre">Sobre nós</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="coluna-rodape">
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="colecao.html">Biquínis</a></li>
+          <li><a href="colecao.html">Maiôs</a></li>
+          <li><a href="colecao.html">Saídas de praia</a></li>
+          <li><a href="colecao.html">Acessórios</a></li>
+        </ul>
+      </div>
+      <div class="coluna-rodape">
+        <h4>Atendimento</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Trocas e devoluções</a></li>
+          <li><a href="rastreio.html" class="link-brilhante-ativo">Rastrear pedido</a></li>
+          <li><a href="#">Fale conosco</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="barra-inferior-rodape">
+      <div class="container-barra-inferior">
+        <p>© 2026 MaréAlta. Todos os direitos reservados.</p>
+        <div class="links-legais">
+          <a href="privacidade.html">Privacidade</a>
+          <a href="termos.html">Termos de uso</a>
+          <a href="cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
