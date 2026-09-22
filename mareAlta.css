@@ -195,50 +195,181 @@ html {
     100% { transform: translateX(-50%); }
   }
   
-  .secao-destaque {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 80px;
-    transition: filter 0.5s ease;
-  }
- 
+  /* ==========================================================
+   SEÇÃO DESTAQUE (HERO)
+   ========================================================== */
+.secao-destaque {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 60px 20px;
+  overflow: hidden;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Imagem de Fundo */
 .imagem-fundo-secao-destaque {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 0;
-    filter: brightness(0.9);
-    transition: filter 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  filter: brightness(0.9);
+  transition: filter 0.8s ease, transform 0.8s ease;
+}
+
+/* Camada de Sobreposição Escura */
+.secao-destaque .camada-sobreposicao {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+  transition: background 0.5s ease;
+}
+
+/* Efeito Hover na Imagem e Fundo */
+.secao-destaque:hover .imagem-fundo-secao-destaque,
+.secao-destaque.hover-iluminado .imagem-fundo-secao-destaque {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+.secao-destaque:hover .camada-sobreposicao,
+.secao-destaque.hover-iluminado .camada-sobreposicao {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Selo Verão (Posicionado no Canto Superior ou Acima do Texto) */
+.selo-verao {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 20px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.selo-verao p {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.selo-verao strong {
+  font-size: 13px;
+  color: #d4af37;
+  font-weight: 600;
+}
+
+/* Conteúdo de Texto e Botões */
+.conteudo-destaque {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  width: 100%;
+}
+
+.subtitulo-destaque {
+  display: inline-block;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #23a1b0;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.conteudo-destaque h1 {
+  font-family: 'Playfair Display', serif, sans-serif;
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.destaque-dourado {
+  color: #d4af37;
+  font-style: italic;
+}
+
+.conteudo-destaque .descricao {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+/* Botões da Seção */
+.botoes-destaque {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.botao-principal {
+  background-color: #197b88;
+  color: #ffffff;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.botao-principal:hover {
+  background-color: #13606b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(25, 123, 136, 0.4);
+}
+
+.botao-secundario {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.botao-secundario:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+  .conteudo-destaque h1 {
+    font-size: 36px;
   }
-  
-  .secao-destaque .camada-sobreposicao {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: 1;
-    transition: background 0.5s ease;
+  .conteudo-destaque .descricao br {
+    display: none;
   }
-  
-  .secao-destaque:hover .camada-sobreposicao,
-  .secao-destaque.hover-iluminado .camada-sobreposicao {
-    background: rgba(0, 0, 0, 0.15);
-  }
-  
-  .secao-destaque:hover,
-  .secao-destaque.hover-iluminado {
-    filter: brightness(1.15);
-  }
+}
   
   .selo-verao {
     position: absolute;
