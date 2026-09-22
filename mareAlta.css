@@ -196,20 +196,16 @@ html {
   }
   
   /* ==========================================================
-   SEÇÃO DESTAQUE (HERO)
+   SEÇÃO DESTAQUE (HERO) - COM IMAGEM ARTÍSTICA
    ========================================================== */
 .secao-destaque {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 100px 20px 60px 20px;
-  overflow: hidden;
-  text-align: center;
-  color: #ffffff;
 }
 
 /* Imagem de Fundo */
@@ -222,185 +218,126 @@ html {
   object-fit: cover;
   object-position: center;
   z-index: 0;
-  filter: brightness(0.9);
+  filter: brightness(0.95);
   transition: filter 0.8s ease, transform 0.8s ease;
 }
 
-/* Camada de Sobreposição Escura */
+/* Camada de Sobreposição Escura (Leve para destacar os botões e manter a arte legível) */
 .secao-destaque .camada-sobreposicao {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.15);
   z-index: 1;
   transition: background 0.5s ease;
 }
 
-/* Efeito Hover na Imagem e Fundo */
-.secao-destaque:hover .imagem-fundo-secao-destaque,
-.secao-destaque.hover-iluminado .imagem-fundo-secao-destaque {
-  filter: brightness(1.1);
-  transform: scale(1.02);
+.secao-destaque:hover .imagem-fundo-secao-destaque {
+  filter: brightness(1.05);
+  transform: scale(1.01);
 }
 
-.secao-destaque:hover .camada-sobreposicao,
-.secao-destaque.hover-iluminado .camada-sobreposicao {
-  background: rgba(0, 0, 0, 0.25);
-}
-
-/* Selo Verão (Posicionado no Canto Superior ou Acima do Texto) */
+/* Selo Verão (Posicionado no Canto Superior Direito) */
 .selo-verao {
-  position: relative;
+  position: absolute;
+  top: 130px;
+  right: 80px;
+  background-color: #D95B43;
+  padding: 10px 22px;
+  border-radius: 50px;
+  text-align: center;
+  transform: rotate(12deg);
   z-index: 2;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 8px 20px;
-  border-radius: 30px;
-  margin-bottom: 20px;
-  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .selo-verao p {
   font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  color: #ffffff;
   margin: 0;
-  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .selo-verao strong {
-  font-size: 13px;
-  color: #d4af37;
-  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: #F8E2B2;
 }
 
-/* Conteúdo de Texto e Botões */
-.conteudo-destaque {
-  position: relative;
-  z-index: 2;
-  max-width: 750px;
-  width: 100%;
-}
-
-.subtitulo-destaque {
-  display: inline-block;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: #23a1b0;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.conteudo-destaque h1 {
-  font-family: 'Playfair Display', serif, sans-serif;
-  font-size: 52px;
-  font-weight: 500;
-  line-height: 1.15;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
-.destaque-dourado {
-  color: #d4af37;
-  font-style: italic;
-}
-
-.conteudo-destaque .descricao {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 300;
-  line-height: 1.6;
-  margin-bottom: 35px;
-}
-
-/* Botões da Seção */
+/* Botões da Seção (Posicionados em baixo de "Por Você") */
 .botoes-destaque {
+  position: absolute;
+  bottom: 24%; /* Altura ajustada para ficar logo abaixo do "Por Você" */
+  right: 18%;  /* Alinhado na direita com o texto do fundo */
+  z-index: 2;
   display: flex;
   gap: 16px;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .botao-principal {
-  background-color: #197b88;
+  background: #178195;
   color: #ffffff;
-  padding: 14px 32px;
-  border-radius: 30px;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 50px;
   font-size: 14px;
   font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(23, 129, 149, 0.35);
 }
 
 .botao-principal:hover {
-  background-color: #13606b;
+  background: #126373;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(25, 123, 136, 0.4);
+  box-shadow: 0 6px 20px rgba(23, 129, 149, 0.5);
 }
 
 .botao-secundario {
-  background-color: transparent;
+  background: rgba(0, 0, 0, 0.2);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  padding: 14px 32px;
-  border-radius: 30px;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 50px;
   font-size: 14px;
   font-weight: 500;
-  text-decoration: none;
+  backdrop-filter: blur(4px);
   transition: all 0.3s ease;
 }
 
 .botao-secundario:hover {
+  background: rgba(255, 255, 255, 0.25);
   border-color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
 }
 
-/* Responsividade Básica */
-@media (max-width: 768px) {
-  .conteudo-destaque h1 {
-    font-size: 36px;
+/* Ajuste Responsivo para Celulares */
+@media (max-width: 992px) {
+  .botoes-destaque {
+    right: 10%;
+    bottom: 20%;
   }
-  .conteudo-destaque .descricao br {
-    display: none;
+  .selo-verao {
+    right: 30px;
+    top: 110px;
   }
 }
-  
-  .selo-verao {
+
+@media (max-width: 600px) {
+  .botoes-destaque {
     position: absolute;
-    top: 140px;
-    right: 80px;
-    background-color: #D95B43;
-    padding: 14px 28px;
-    border-radius: 50px;
-    text-align: center;
-    transform: rotate(12deg);
-    z-index: 2;
+    bottom: 12%;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 90%;
+    justify-content: center;
   }
-  
-  .selo-verao p { font-size: 13px; }
-  .selo-verao strong { font-family: 'Playfair Display', serif; font-size: 17px; }
-  
-  .conteudo-destaque {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 700px;
-  }
-  
-  .subtitulo-destaque { font-size: 16px; margin-bottom: 15px; display: block; }
-  .conteudo-destaque h1 { font-family: 'Playfair Display', serif; font-size: 64px; line-height: 1.1; margin-bottom: 20px; }
-  .destaque-dourado { color: #E0BA79; font-style: italic; }
-  .descricao { font-size: 16px; line-height: 1.6; font-weight: 300; margin-bottom: 35px; }
-  
-  .botoes-destaque { display: flex; justify-content: center; gap: 20px; }
-  .botao-principal { background: #178195; color: #fff; text-decoration: none; padding: 12px 32px; border-radius: 50px; }
-  .botao-secundario { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.85); text-decoration: none; padding: 12px 32px; border-radius: 50px; }
+}
   
   /* ==========================================================
      SEGUNDA SEÇÃO (Com a imagem baleioes.png + Luz suave no Scroll)
