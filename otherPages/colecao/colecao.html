@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maré Alta - Ala Masculina 2026</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="colecao.css">
+</head>
+<body>
+
+    <!-- Header Superior -->
+    <header class="top-header">
+        <div class="header-container">
+            <div class="brand">
+                <!-- Logo Oficial do Maré Alta -->
+                <a href="#" class="brand-link">
+                    <img src="logo.jpg" alt="Maré Alta Logo" class="header-logo-img">
+                    <span class="brand-name">Maré Alta</span>
+                </a>
+                <a href="#" class="nav-link-collection">Coleção</a>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Pesquisar">
+                <i data-lucide="search" class="search-icon"></i>
+            </div>
+
+            <div class="header-icons">
+                <button class="icon-btn" aria-label="Sacola de Compras">
+                    <i data-lucide="shopping-bag"></i>
+                </button>
+                <button class="icon-btn" id="menuToggle" aria-label="Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Suspenso -->
+        <nav class="nav-menu-dropdown" id="navMenu">
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Principal (Hero Masculino com Elementos Geométricos) -->
+    <section class="hero-banner">
+        <!-- Formas Geométricas do Banner -->
+        <div class="hero-shape circle-left"></div>
+        <div class="hero-shape arc-top-left"></div>
+        <div class="hero-shape keyhole-left"></div>
+        
+        <div class="hero-shape arc-top-right"></div>
+        <div class="hero-shape arc-bottom-right"></div>
+        <div class="hero-shape circle-right"></div>
+
+        <div class="banner-content">
+            <!-- Alternador com Símbolos Feminino / Masculino -->
+            <div class="gender-toggle">
+                <button class="gender-btn">
+                    <span class="gender-symbol">♀</span> Feminino
+                </button>
+                <button class="gender-btn active">
+                    <span class="gender-symbol">♂</span> Masculino
+                </button>
+            </div>
+
+            <div class="hero-titles">
+                <span class="subtitle">Coleção 2026</span>
+                <h1 class="main-title">Ala <span>Masculina</span></h1>
+                <p class="description">Bermudas, sungas, camisas e kits para curtir o mar com estilo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Principal de Produtos -->
+    <main class="collection-container">
+        
+        <div class="filter-header">
+            <span class="section-tag">Coleção 2026</span>
+            <h2 class="section-title">Peças que <em>brilham</em><br>no verão</h2>
+
+            <div class="filter-tags">
+                <button class="tag active">Todos</button>
+                <button class="tag">Bermuda</button>
+                <button class="tag">Sunga</button>
+                <button class="tag">Camisa</button>
+                <button class="tag">Kit</button>
+                <button class="tag">Acessórios</button>
+            </div>
+        </div>
+
+        <!-- Grid de Produtos -->
+        <div class="product-grid" id="productGrid">
+            
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500&q=80" alt="Shorts Pietro Preto">
+                </div>
+                <div class="card-info">
+                    <span class="category-label">Bermuda</span>
+                    <h3 class="product-title">Shorts Pietro Preto - Curto com Zíper</h3>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">4.9 (120)</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-container">
+                            <span class="current-price">R$ 249</span>
+                            <span class="old-price">R$ 320</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="dot black active"></span>
+                            <span class="dot brown"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1565084888279-aca607ecce0c?w=500&q=80" alt="Shorts Gabriel Branco">
+                </div>
+                <div class="card-info">
+                    <span class="category-label">Bermuda</span>
+                    <h3 class="product-title">Shorts Gabriel Branco - Zíper Lateral</h3>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">4.9 (120)</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-container">
+                            <span class="current-price">R$ 149</span>
+                            <span class="old-price">R$ 309</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="dot white active"></span>
+                            <span class="dot lightgray"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500&q=80" alt="Bermuda Thiago">
+                </div>
+                <div class="card-info">
+                    <span class="category-label">Bermuda</span>
+                    <h3 class="product-title">Bermuda Thiago Azul/Branco - Bloco de Cores</h3>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">4.9 (120)</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-container">
+                            <span class="current-price">R$ 249</span>
+                            <span class="old-price">R$ 320</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="dot navy active"></span>
+                            <span class="dot yellow"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500&q=80" alt="Shorts Enzo">
+                </div>
+                <div class="card-info">
+                    <span class="category-label">Bermuda</span>
+                    <h3 class="product-title">Bermuda Enzo Azul Celeste - Estampa Folhagem</h3>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">4.9 (120)</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-container">
+                            <span class="current-price">R$ 249</span>
+                            <span class="old-price">R$ 320</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="dot cyan active"></span>
+                            <span class="dot lightgray"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500&q=80" alt="Shorts Bernardo">
+                </div>
+                <div class="card-info">
+                    <span class="category-label">Sunga</span>
+                    <h3 class="product-title">Shorts Bernardo Azul Marinho - Estampa Tubarão</h3>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">4.9 (120)</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-container">
+                            <span class="current-price">R$ 249</span>
+                            <span class="old-price">R$ 320</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="dot darkblue active"></span>
+                            <span class="dot lightgray"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500&q=80" alt="Bermuda Vinícius">
+                </div>
+                <div class="card-info">
+                    <span class="category-label">Bermuda</span>
+                    <h3 class="product-title">Bermuda Vinícius Verde Militar - Estampa Floral</h3>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">4.9 (120)</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-container">
+                            <span class="current-price">R$ 249</span>
+                            <span class="old-price">R$ 320</span>
+                        </div>
+                        <div class="color-options">
+                            <span class="dot olive active"></span>
+                            <span class="dot lightgray"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="load-more-wrapper">
+            <button class="btn-see-more">Ver mais</button>
+        </div>
+
+    </main>
+
+    <!-- Faixa de Ondas do Mar com a Ilustração da Baleia -->
+    <div class="ocean-wave-wrapper">
+        <!-- Imagem da Baleia posicionada em cima da faixa de ondas -->
+        <img src="baleia.png" alt="Baleia Jubarte Maré Alta" class="whale-illustration">
+        <div class="ocean-wave-banner"></div>
+    </div>
+
+    <!-- Rodapé Plano -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand-col">
+                <div class="footer-logo">
+                    <img src="logo.jpg" alt="Maré Alta Logo" class="footer-logo-img">
+                    <span class="footer-brand-text">MARÉ ALTA</span>
+                </div>
+                <p>Moda praia premium com alma praiana, feita para quem vive o verão com estilo.</p>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Coleção</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Categorias</h4>
+                <ul>
+                    <li><a href="#">Bermudas</a></li>
+                    <li><a href="#">Sungas</a></li>
+                    <li><a href="#">Camisas</a></li>
+                    <li><a href="#">Acessórios</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Atendimento</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Trocas e devoluções</a></li>
+                    <li><a href="#">Rastrear pedido</a></li>
+                    <li><a href="#">Fale conosco</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Maré Alta. Todos os direitos reservados.</p>
+            <div class="legal-links">
+                <a href="#">Privacidade</a>
+                <a href="#">Termos de uso</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
