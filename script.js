@@ -142,24 +142,54 @@
     }
   
     // Validação Login
-    const formLogin = document.getElementById('form-login');
-    const btnLoginSubmit = document.getElementById('btn-login-submit');
-  
-    if (formLogin) {
-      formLogin.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = document.getElementById('login-email');
-        const senha = document.getElementById('login-senha');
-  
-        if (!email.value || !senha.value || senha.value.length < 4) {
-          dispararErroBotao(btnLoginSubmit, [email, senha]);
-          return;
-        }
-  
-        fecharModalAuth();
-      });
+const formLogin = document.getElementById('form-login');
+const btnLoginSubmit = document.getElementById('btn-login-submit');
+
+const CREDENCIAIS = {
+  cliente: {
+    email: 'cliente@marealta.com',
+    senha: 'Cliente123'
+  },
+  admin: {
+    email: 'admin@marealta.com',
+    senha: 'Admin123'
+  }
+};
+
+if (formLogin) {
+  formLogin.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('login-email');
+    const senha = document.getElementById('login-senha');
+
+    const emailDigitado = email.value.trim().toLowerCase();
+    const senhaDigitada = senha.value;
+
+    // Administrador
+    if (
+      emailDigitado === CREDENCIAIS.admin.email &&
+      senhaDigitada === CREDENCIAIS.admin.senha
+    ) {
+      sessionStorage.setItem('tipoUsuario', 'admin');
+      fecharModalAuth();
+      return;
     }
-  
+
+    // Cliente
+    if (
+      emailDigitado === CREDENCIAIS.cliente.email &&
+      senhaDigitada === CREDENCIAIS.cliente.senha
+    ) {
+      sessionStorage.setItem('tipoUsuario', 'cliente');
+      fecharModalAuth();
+      return;
+    }
+
+    // Login inválido
+    dispararErroBotao(btnLoginSubmit, [email, senha]);
+  });
+}
     // Validação Cadastro
     const formCadastro = document.getElementById('form-cadastro');
     const btnCadastroSubmit = document.getElementById('btn-cadastro-submit');
@@ -189,4 +219,24 @@
         fecharModalAuth();
       });
     }
+      // Redirecionamento da Coleção
+document.addEventListener('click', function(e) {
+  const linkColecao = e.target.closest(
+    '.links-navegacao a[href="colecao.html"], ' +
+    '.coluna-links-rodape a[href="colecao.html"]'
+  );
+
+  if (!linkColecao) return;
+
+  e.preventDefault();
+
+  const tipoUsuario = sessionStorage.getItem('tipoUsuario');
+
+  if (tipoUsuario === 'admin') {
+    window.location.href = 'colecaoADM.html';
+  } else {
+    window.location.href = 'colecao.html';
+  }
+});
+
   });
