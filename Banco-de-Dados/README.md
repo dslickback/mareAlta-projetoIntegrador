@@ -20,7 +20,6 @@ O sistema de e-commerce de moda praia tem como objetivo armazenar informações 
 ---
 
 ### Modelo Entidade-Relacionamento (MER)
-> **Dica:** Salve a imagem do diagrama no seu repositório (ex: na pasta `img/mer.png`) e atualize o caminho abaixo:
 
 ![Modelo Entidade-Relacionamento](./img/mer.png)
 
@@ -66,7 +65,7 @@ O sistema de e-commerce de moda praia tem como objetivo armazenar informações 
 
 ---
 
-## 2. Estrutura do Banco de Dados (DDL)
+## 2. Estrutura do Banco de Dados (SQL)
 
 ```sql
 CREATE DATABASE Mare_Alta;
