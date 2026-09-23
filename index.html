@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="mareAlta.css">
     
     <style>
-        /* ESTILOS: Exemplares de Roupas (Produtos) */
+        /* Exemplares de Roupas */
         .secao-produtos { background-color: #141722; padding: 80px 20px; text-align: center; }
         .titulo-produtos { font-family: 'Playfair Display', serif; font-size: 36px; color: #ffffff; margin-bottom: 40px; }
         .destaque-dourado-italic { color: #E0BA79; font-style: italic; font-family: 'Playfair Display', serif; }
@@ -24,7 +24,7 @@
         .btn-comprar { width: 100%; background-color: #178195; color: #ffffff; border: none; padding: 12px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: background-color 0.3s; }
         .btn-comprar:hover { background-color: #126373; }
 
-        /* ESTILOS: Carrossel de Depoimentos Infinito e Peek */
+        /* Meu carrosselzinho Infinito e "Peek" */
         .secao-depoimentos { overflow: hidden; padding-bottom: 80px; }
         .carrossel-wrapper { 
             width: 100%; 
@@ -66,7 +66,8 @@
             </a>
             <ul class="links-navegacao">
                 <li><a href="#inicio" class="ativo">Início</a></li>
-                <li><a href="#colecao">Coleção</a></li>
+                <li><a href="/mareAlta-projetoIntegrador/colecao.html">Coleção</a></li>
+                <li><a href="/mareAlta-projetoIntegrador/sobre.html">Sobre</a></li>                
                 <li><a href="#contato">Contato</a></li>
             </ul>
             <div class="acoes-navegacao">
@@ -519,7 +520,7 @@
 
     <script src="script.js"></script>
 
-    <!-- SCRIPT DO CARROSSEL INFINITO (Vanilla JS) -->
+    <!-- Carrossel infinito btw -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const track = document.getElementById('track-depoimentos');
@@ -527,7 +528,7 @@
             
             let cards = Array.from(track.querySelectorAll('.cartao-depoimento'));
             
-            // Duplica os cartões para criar um buffer contínuo no loop
+            // Duplica os cartões pra criar um buffer contínuo no loop
             const numOriginal = cards.length;
             for(let i = 0; i < numOriginal; i++) {
                 track.appendChild(cards[i].cloneNode(true));
@@ -538,7 +539,6 @@
             let isTransitioning = false;
 
             function atualizarCarrossel(animar = true) {
-                // Cálculo das dimensões reais para tradução do eixo X
                 const card = cards[0];
                 const cardWidth = card.offsetWidth;
                 const style = window.getComputedStyle(card);
@@ -551,17 +551,16 @@
                 
                 const translate = offset - (currentIndex * slotWidth);
                 
-                // Aplica a física de transição
+                // Transição
                 track.style.transition = animar ? 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)' : 'none';
                 track.style.transform = `translateX(${translate}px)`;
                 
-                // Gestão das classes de destaque (escala visual)
                 cards.forEach((c, index) => {
                     c.classList.toggle('ativo', index === currentIndex);
                 });
             }
 
-            atualizarCarrossel(false); // Posicionamento inicial
+            atualizarCarrossel(false); // Posição inicial
             window.addEventListener('resize', () => atualizarCarrossel(false)); // Responsividade
 
             function proximoSlide() {
@@ -570,17 +569,16 @@
                 currentIndex++;
                 atualizarCarrossel(true);
                 
-                // Lógica de loop contínuo: move o nó anterior para o fim da fila em background
                 setTimeout(() => {
                     track.appendChild(track.firstElementChild);
                     cards = Array.from(track.querySelectorAll('.cartao-depoimento'));
-                    currentIndex--; // Ajusta o índice pelo nó movido
-                    atualizarCarrossel(false); // Recalcula a posição X instantaneamente
+                    currentIndex--;
+                    atualizarCarrossel(false);
                     isTransitioning = false;
-                }, 500); // 500ms alinhado com o tempo de transition do CSS
+                }, 500);
             }
 
-            setInterval(proximoSlide, 3500); // Rotação autônoma a cada 3.5 segundos
+            setInterval(proximoSlide, 3500); // Rotação a cada 3.5s
         });
     </script>
 </body>
