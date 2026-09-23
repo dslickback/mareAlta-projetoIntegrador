@@ -395,18 +395,15 @@
         </div>
     </footer>
 
-    <!-- MODAL DE AUTENTICAÇÃO -->
     <div id="modal-auth" class="modal-overlay" aria-hidden="true">
         <div class="modal-card">
             <button type="button" class="modal-fechar" id="fechar-modal" aria-label="Fechar">&times;</button>
 
-            <!-- Alternador de Abas -->
             <div class="modal-abas" id="container-abas">
                 <button type="button" class="aba-btn ativo" data-tab="login">Entrar</button>
                 <button type="button" class="aba-btn" data-tab="cadastro">Cadastrar</button>
             </div>
 
-            <!-- ABA 1: LOGIN -->
             <div class="conteudo-aba ativo" id="tab-login">
                 <div class="cabecalho-modal">
                     <h2>Bem-vinda de volta</h2>
@@ -499,7 +496,6 @@
                 </form>
             </div>
 
-            <!-- ABA 3: RECUPERAR SENHA -->
             <div class="conteudo-aba" id="tab-recuperar">
                 <div class="cabecalho-modal">
                     <h2>Recuperar senha</h2>
@@ -529,14 +525,13 @@
             
             let cards = Array.from(track.querySelectorAll('.cartao-depoimento'));
             
-            // Duplica os cartões pra criar um buffer contínuo no loop
             const numOriginal = cards.length;
             for(let i = 0; i < numOriginal; i++) {
                 track.appendChild(cards[i].cloneNode(true));
             }
             cards = Array.from(track.querySelectorAll('.cartao-depoimento'));
 
-            let currentIndex = 2; // Inicia com o terceiro item centralizado
+            let currentIndex = 2;
             let isTransitioning = false;
 
             function atualizarCarrossel(animar = true) {
@@ -546,13 +541,11 @@
                 const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
                 const slotWidth = cardWidth + margin;
                 
-                // Pega o centro da janela do carrossel
                 const wrapperWidth = track.parentElement.offsetWidth;
                 const offset = (wrapperWidth / 2) - (slotWidth / 2);
                 
                 const translate = offset - (currentIndex * slotWidth);
                 
-                // Transição
                 track.style.transition = animar ? 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)' : 'none';
                 track.style.transform = `translateX(${translate}px)`;
                 
@@ -561,8 +554,8 @@
                 });
             }
 
-            atualizarCarrossel(false); // Posição inicial
-            window.addEventListener('resize', () => atualizarCarrossel(false)); // Responsividade
+            atualizarCarrossel(false);
+            window.addEventListener('resize', () => atualizarCarrossel(false));
 
             function proximoSlide() {
                 if (isTransitioning) return;
@@ -579,7 +572,7 @@
                 }, 500);
             }
 
-            setInterval(proximoSlide, 3500); // Rotação a cada 3.5s
+            setInterval(proximoSlide, 3500);
         });
     </script>
 </body>
