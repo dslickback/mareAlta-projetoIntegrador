@@ -65,7 +65,7 @@ O sistema de e-commerce de moda praia tem como objetivo armazenar informações 
 
 ---
 
-## 2. Estrutura do Banco de Dados (DDL)
+## 2. Estrutura do Banco de Dados (SQL)
 
 ```sql
 CREATE DATABASE Mare_Alta;
