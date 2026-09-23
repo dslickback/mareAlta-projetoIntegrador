@@ -1,0 +1,889 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #f8f6f1;
+    --card-bg: #fff;
+    --banner-green: #00624c;
+    --banner-green-dark: #004d3c;
+    --accent: #00d8f6;
+    --accent-light: #c5f5f5;
+    --text-primary: #222;
+    --gold: #d4af37;
+    --border-color: #e2dfd8;
+    --footer-bg: #050505;
+}
+
+body.feminino {
+    --banner-green: #9b5d05;
+    --banner-green-dark: #744400;
+    --accent: #f3bd19;
+    --accent-light: #fff0a8;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+.top-header {
+    background: #fff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 240px;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.header-logo-img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #111;
+}
+
+.nav-link-collection {
+    color: #12b3a8;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.search-bar {
+    position: relative;
+    width: min(420px, 40vw);
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 9px 40px 9px 16px;
+    border: 1px solid #ccc;
+    border-radius: 22px;
+    outline: none;
+    font: inherit;
+    font-size: 13px;
+    background: #fff;
+}
+
+.search-bar input:focus {
+    border-color: var(--banner-green);
+    box-shadow: 0 0 0 3px rgba(0, 98, 76, .08);
+}
+
+.search-icon {
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    color: #777;
+}
+
+.header-icons {
+    display: flex;
+    gap: 8px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.icon-btn:hover {
+    background: #f0f0f0;
+}
+
+.nav-menu-dropdown {
+    position: absolute;
+    top: calc(100% + 2px);
+    right: 40px;
+    background-color: #ffffff;
+    background-image: url("onda2.png");
+    background-size: cover;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    padding: 8px 0;
+    min-width: 170px;
+    display: none;
+    z-index: 200;
+}
+
+.nav-menu-dropdown.active {
+    display: block;
+}
+
+.nav-menu-dropdown ul {
+    list-style: none;
+}
+
+.nav-menu-dropdown li a {
+    display: block;
+    padding: 10px 20px;
+    color: #222;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: center;
+
+}
+
+.nav-menu-dropdown li a:hover {
+    color: var(--banner-green);
+}
+
+/* HERO BANNER - CONTAINER PRINCIPAL */
+.hero-banner {
+    background: var(--banner-green);
+    color: #fff;
+    padding: 55px 20px;
+    min-height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Importante: impede que imagens vazem a tela e criem barra de rolagem */
+    transition: background-color .3s ease;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 10; /* Garante que os textos e botões fiquem SEMPRE por cima dos peixes */
+    max-width: 700px;
+    position: relative;
+}
+
+/* REGRAS DAS IMAGENS DE FUNDO (CARDUMES) */
+.hero-shape {
+    position: absolute;
+    pointer-events: none;
+    object-fit: contain;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    /* Removido mix-blend-mode para usar PNG transparente limpo */
+}
+
+/* 1. CARDUMES EM CÍRCULO (EXTREMIDADES) */
+.cardume-circulo-left {
+    width: 220px;
+    height: auto;
+    left: -30px;
+    top: -20px;
+    transform: rotate(-10deg);
+}
+
+.cardume-circulo-right {
+    width: 240px;
+    height: auto;
+    right: -30px;
+    top: -10px;
+    transform: rotate(140deg);
+}
+
+.cardume-novo-left {
+    width: 200px;
+    height: auto;
+    left: 20%;  
+    top: 145px;
+    bottom: -15px;
+   filter: brightness(1.0) contrast(0.95);
+    opacity: 0.85;
+}
+
+.cardume-novo-right {
+    width: 200px;
+    height: auto;
+    right: 25%;         /* Próximo do texto central */
+    top: 30px;
+    transform: scaleX(-1);
+    filter: brightness(1.0) contrast(0.95);
+    opacity: 0.85;
+}
+
+/* Esconde elementos ou suaviza na aba feminina */
+body.feminino .hero-shape {
+    display: none; /* Se quiser ocultar os cardumes masculinos na aba feminina */
+}
+
+/* RESPONSIVIDADE (Ajuste automático para celulares/tablets) */
+@media (max-width: 1100px) {
+    .cardume-novo-left,
+    .cardume-novo-right {
+        display: none; /* Esconde os cardumes do meio em telas menores para não encostar no texto */
+    }
+}
+
+@media (max-width: 600px) {
+    .cardume-circulo-left {
+        width: 140px;
+        left: -40px;
+    }
+    .cardume-circulo-right {
+        width: 140px;
+        right: -40px;
+    }
+}
+
+/* POSICIONAMENTO E REGRAS DAS FLORES (ABA FEMININA) */
+.flor-left {
+    width: 220px;
+    height: auto;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-10deg);
+}
+
+.flor-right {
+    width: 220px;
+    height: auto;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%) scaleX(-1) rotate(-10deg); /* Espelhada para simetria */
+}
+
+/* CONTROLE DE EXIBIÇÃO POR ABA */
+
+/* Quando estiver no MASCULINO: mostra peixes, esconde flores */
+body:not(.feminino) .feminino-only {
+    display: none !important;
+}
+
+/* Quando estiver no FEMININO: mostra flores, esconde peixes */
+body.feminino .masculino-only {
+    display: none !important;
+}
+
+body.feminino .feminino-only {
+    display: block !important;
+}
+
+/* RESPONSIVIDADE (Ajuste para celulares) */
+@media (max-width: 768px) {
+    .flor-left, .flor-right {
+        width: 130px;
+    }
+}
+
+/* =========================================================
+   HIBISCOS DA ABA FEMININA (Espelhados com o Cardume Novo)
+   ========================================================= */
+
+/* Hibisco da Esquerda (Mais para baixo) */
+.flor-hibisco-left {
+    width: 200px;
+    height: auto;
+    left: 20%;  
+    top: 105px;         /* Próximo do texto central */
+    bottom: -15px;      /* Posicionado na parte inferior */
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+/* Hibisco da Direita (Mais para cima + Espelhado) */
+.flor-hibisco-right {
+    width: 200px;
+    height: auto;
+    right: 20%;         /* Próximo do texto central */
+    top: 15px;          /* Posicionado na parte superior */
+    transform: scaleX(-1); /* Inverte horizontalmente para criar simetria */
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+/* =========================================================
+   CONTROLE DE EXIBIÇÃO POR ABA (VISIBILIDADE)
+   ========================================================= */
+
+/* Quando a aba Feminina NÃO estiver ativa: esconde elementos femininos */
+body:not(.feminino) .feminino-only {
+    display: none !important;
+}
+
+/* Quando a aba Feminina ESTIVER ativa: mostra elementos femininos e esconde masculinos */
+body.feminino .masculino-only {
+    display: none !important;
+}
+
+body.feminino .feminino-only {
+    display: block !important;
+}
+
+/* Oculta as flores do meio em telas menores para não sobrepor o texto no celular */
+@media (max-width: 1100px) {
+    .flor-hibisco-left,
+    .flor-hibisco-right {
+        display: none !important;
+    }
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.gender-toggle {
+    display: inline-flex;
+    background: rgba(0,0,0,.25);
+    padding: 4px;
+    border-radius: 22px;
+    margin-bottom: 22px;
+}
+
+.gender-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,.85);
+    padding: 7px 20px;
+    border-radius: 18px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: .2s;
+}
+
+.gender-btn:hover {
+    color: #fff;
+}
+
+.gender-btn.active {
+    background: #fff;
+    color: var(--banner-green);
+    font-weight: 600;
+}
+
+.gender-symbol {
+    font-size: 15px;
+}
+
+.hero-titles .subtitle {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    opacity: .85;
+    margin-bottom: 6px;
+}
+
+.hero-titles .main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 400;
+}
+
+.hero-titles .main-title span {
+    font-style: italic;
+    color: #ffe194;
+}
+
+.hero-titles .description {
+    font-size: 13px;
+    opacity: .9;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/* PRODUTOS */
+.collection-container {
+    max-width: 1140px;
+    margin: 40px auto 20px;
+    padding: 0 20px;
+}
+
+.filter-header {
+    margin-bottom: 30px;
+}
+
+.section-tag {
+    font-size: 11px;
+    color: #888;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.section-title em {
+    color: #12b3a8;
+    font-style: italic;
+}
+
+body.feminino .section-title em {
+    color: #a26400;
+}
+
+.filter-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: #eae6df;
+    border: none;
+    padding: 7px 16px;
+    border-radius: 13px;
+    font-size: 12px;
+    color: #555;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.tag:hover,
+.tag.active {
+    background: var(--banner-green);
+    color: #fff;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 240px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f1f1f1;
+    margin-bottom: 12px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s;
+}
+
+.product-card:hover .image-wrapper img {
+    transform: scale(1.035);
+}
+
+.category-label {
+    font-size: 10px;
+    color: #999;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    min-height: 38px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 12px;
+}
+
+.stars {
+    color: #ffc107;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.score {
+    font-size: 10px;
+    color: #777;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.price-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.current-price {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.old-price {
+    font-size: 11px;
+    color: #aaa;
+    text-decoration: line-through;
+}
+
+.color-options {
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    outline: 1px solid #666;
+    outline-offset: 1px;
+}
+
+.dot.black { background: #111; }
+.dot.brown { background: #5c4033; }
+.dot.white { background: #fff; border: 1px solid #ddd; }
+.dot.lightgray { background: #e0e0e0; }
+.dot.navy { background: #000080; }
+.dot.yellow { background: #ffd700; }
+.dot.cyan { background: #87ceeb; }
+.dot.darkblue { background: #002244; }
+.dot.olive { background: #556b2f; }
+.dot.pink { background: #ef9aaa; }
+.dot.beige { background: #d9c5a0; }
+.dot.red { background: #a83232; }
+.dot.green { background: #397a5d; }
+.dot.lilac { background: #b49ad8; }
+
+.empty-state {
+    display: none;
+    text-align: center;
+    padding: 55px 20px;
+    color: #777;
+}
+
+.empty-state.visible {
+    display: block;
+}
+
+.empty-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.empty-state h3 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.load-more-wrapper {
+    text-align: center;
+    margin: 35px 0 20px;
+}
+
+.btn-see-more {
+    background: var(--banner-green);
+    color: #fff;
+    border: none;
+    padding: 10px 36px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform .2s, opacity .2s;
+}
+
+.btn-see-more:hover {
+    transform: translateY(-2px);
+    opacity: .92;
+}
+
+/* BALEIA + ONDA */
+.ocean-wave-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+    overflow: visible;
+}
+
+.whale-illustration {
+    position: absolute;
+    left: max(20px, calc(50% - 550px));
+    top: -90px;
+    width: 320px;
+    max-width: 40vw;
+    height: auto;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.ocean-wave-banner {
+    width: 100%;
+    height: 140px;
+    background-color: var(--banner-green-dark);
+    background-image: url('onda1.png'); /* Nome da sua imagem de onda */
+    background-repeat: no-repeat; /* IMPEDE A REPETIÇÃO/RÉPLICA DA IMAGEM */
+    background-position: bottom center; /* Alinha a onda na parte inferior */
+    background-size: cover;
+}
+
+/* RODAPÉ */
+.main-footer {
+    background: #050505;
+    color: #fff;
+    padding: 40px 0 20px;
+    
+}
+
+.footer-content {
+    max-width: 1140px;
+    margin: auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-brand-col p {
+    font-size: 11px;
+    color: #888;
+    margin-top: 12px;
+    max-width: 220px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo-img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.footer-brand-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: var(--gold);
+}
+
+.footer-links-col h4 {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.footer-links-col ul {
+    list-style: none;
+}
+
+.footer-links-col li {
+    margin-bottom: 8px;
+}
+
+.footer-links-col a {
+    color: #888;
+    text-decoration: none;
+    font-size: 11px;
+    transition: color .2s;
+}
+
+.footer-links-col a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    max-width: 1140px;
+    min-height: 80px;
+    margin: 30px auto 0;
+    padding: 20px;
+    border-top: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 10px;
+    color: #666;
+}
+
+.legal-links a {
+    color: #666;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.legal-links a:hover {
+    color: #aaa;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .brand {
+        min-width: auto;
+    }
+
+    .nav-link-collection {
+        display: none;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .top-header {
+        padding: 10px 16px;
+    }
+
+    .header-container {
+        gap: 8px;
+    }
+
+    .brand-name {
+        font-size: 16px;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    .hero-banner {
+        min-height: 260px;
+        padding: 45px 16px;
+    }
+
+    .hero-titles .main-title {
+        font-size: 38px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .image-wrapper {
+        height: 300px;
+    }
+
+    .collection-container {
+        margin-top: 30px;
+    }
+
+    .whale-illustration {
+        position: absolute;
+        left: max(20px, calc(50% - 550px));
+        top: -90px;
+        width: 320px;
+        max-width: 40vw;
+        height: auto;
+        z-index: 5;
+        pointer-events: none;
+        mix-blend-mode: multiply; /* Faz o fundo branco ficar transparente */
+    }
+
+    .ocean-wave-banner {
+        height: 110px;
+        background-size: auto 110px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .footer-brand-col {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .legal-links a {
+        margin: 0 7px;
+    }
+}
