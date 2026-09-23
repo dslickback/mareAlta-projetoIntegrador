@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maré Alta - Coleção 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="colecaoADM.css">
+</head>
+
+<body class="masculino">
+
+<header class="top-header">
+    <div class="header-container">
+        <div class="brand">
+            <a href="#" class="brand-link">
+                <img src="logo.jpg" alt="Maré Alta Logo" class="header-logo-img"
+                     onerror="this.style.display='none'">
+                <span class="brand-name">Maré Alta</span>
+            </a>
+            <a href="#colecao" class="nav-link-collection">Coleção</a>
+        </div>
+
+        <div class="search-bar">
+            <input id="searchInput" type="text" placeholder="Pesquisar produtos...">
+            <i data-lucide="search" class="search-icon"></i>
+        </div>
+
+        <div class="header-icons">
+            <button class="icon-btn" aria-label="Sacola de compras">
+                <i data-lucide="shopping-bag"></i>
+            </button>
+            <button class="icon-btn" id="menuToggle" aria-label="Abrir menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </div>
+
+    <nav class="nav-menu-dropdown" id="navMenu">
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+<section class="hero-banner" id="inicio">
+    <!-- Imagens da Aba Masculina -->
+    <img src="cardume-circulo.jpg" alt="" class="hero-shape cardume-circulo-left masculino-only">
+    <img src="cardume-circulo.jpg" alt="" class="hero-shape cardume-circulo-right masculino-only">
+    <img src="cardume-novo.jpg" alt="" class="hero-shape cardume-novo-left masculino-only">
+    <img src="cardume-novo.jpg" alt="" class="hero-shape cardume-novo-right masculino-only">
+
+    <!-- Imagens da Aba Feminina (Hibiscos na Esquerda e Direita) -->
+     <img src="flores-feminino.jpg" alt="" class="hero-shape flor-left feminino-only">
+    <img src="flores-feminino.jpg" alt="" class="hero-shape flor-right feminino-only">
+    <img src="flor-hibisco.jpg" alt="" class="hero-shape flor-hibisco-left feminino-only">
+    <img src="flor-hibisco.jpg" alt="" class="hero-shape flor-hibisco-right feminino-only">
+
+    <div class="banner-content">
+        <div class="gender-toggle">
+            <button class="gender-btn" data-gender="feminino">
+                <span class="gender-symbol">♀</span> Feminino
+            </button>
+            <button class="gender-btn active" data-gender="masculino">
+                <span class="gender-symbol">♂</span> Masculino
+            </button>
+        </div>
+
+        <div class="hero-titles">
+            <span class="subtitle">Coleção 2026</span>
+            <h1 class="main-title">Ala <span id="heroGender">Masculina</span></h1>
+            <p class="description" id="heroDescription">
+                Bermudas, sungas, camisas e kits para curtir o mar com estilo
+            </p>
+        </div>
+    </div>
+</section>
+
+<main class="collection-container" id="colecao">
+    <div class="filter-header">
+        <span class="section-tag">Coleção 2026</span>
+        <h2 class="section-title">Peças que <em>brilham</em><br>no verão</h2>
+
+        <div class="filter-tags" id="filterTags"></div>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+
+    <div class="empty-state" id="emptyState">
+        <div class="empty-icon">🌊</div>
+        <h3>Nenhuma peça encontrada</h3>
+        <p>Tente outra categoria ou pesquise por outro produto.</p>
+    </div>
+
+    <div class="load-more-wrapper">
+        <button class="btn-see-more" id="seeMoreBtn">Ver mais</button>
+    </div>
+</main>
+
+<div class="ocean-wave-wrapper">
+    <img src="baleia.png" alt="Ilustração de baleia" class="whale-illustration">
+    <div class="ocean-wave-banner"></div>
+</div>
+
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-brand-col">
+            <div class="footer-logo">
+                <img src="logo.jpg" alt="Maré Alta Logo" class="footer-logo-img"
+                     onerror="this.style.display='none'">
+                <span class="footer-brand-text">MARÉ ALTA</span>
+            </div>
+            <p>Moda praia premium com alma praiana, feita para quem vive o verão com estilo.</p>
+        </div>
+
+        <div class="footer-links-col">
+            <h4>Navegação</h4>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#colecao">Coleção</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links-col">
+            <h4>Categorias</h4>
+            <ul id="footerCategories"></ul>
+        </div>
+
+        <div class="footer-links-col">
+            <h4>Atendimento</h4>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Trocas e devoluções</a></li>
+                <li><a href="#">Rastrear pedido</a></li>
+                <li><a href="#">Fale conosco</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Maré Alta. Todos os direitos reservados.</p>
+        <div class="legal-links">
+            <a href="#">Privacidade</a>
+            <a href="#">Termos de uso</a>
+            <a href="#">Cookies</a>
+        </div>
+    </div>
+</footer>
+<div class="modal-overlay" id="productModal">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h2>Cadastrar Nova Peça</h2>
+      <button class="close-modal-btn" id="closeModalBtn">&times;</button>
+    </div>
+
+    <form id="addProductForm" class="modal-form">
+      <div class="form-group">
+        <label for="pCat">Categoria</label>
+        <select id="pCat" required class="form-control">
+          <!-- Categorias dinâmicas via JS -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="pNome">Nome do Produto</label>
+        <input
+          type="text"
+          id="pNome"
+          placeholder="Ex: Bermuda Thiago Azul"
+          required
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="pPreco">Preço Atual (R$)</label>
+          <input
+            type="text"
+            id="pPreco"
+            placeholder="Ex: R$ 159"
+            required
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="pAntigo">Preço Antigo (R$)</label>
+          <input
+            type="text"
+            id="pAntigo"
+            placeholder="Ex: R$ 219"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="pImg">URL da Imagem</label>
+        <input
+          type="url"
+          id="pImg"
+          placeholder="https://sua-imagem.com/foto.jpg"
+          required
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Cores Disponíveis</label>
+        <div class="colors-checkbox-group">
+          <label><input type="checkbox" value="black" /> Preto</label>
+          <label><input type="checkbox" value="white" /> Branco</label>
+          <label><input type="checkbox" value="navy" /> Azul Marinho</label>
+          <label><input type="checkbox" value="cyan" /> Azul Claro</label>
+          <label><input type="checkbox" value="green" /> Verde</label>
+          <label><input type="checkbox" value="beige" /> Bege</label>
+          <label><input type="checkbox" value="pink" /> Rosa</label>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-cancel" id="cancelModalBtn">
+          Cancelar
+        </button>
+        <button type="submit" class="btn-submit">Publicar Peça</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="colecaoADM.js"></script>
+</body>
+</html>
