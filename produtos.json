@@ -1,0 +1,349 @@
+{
+  "Mare_Alta": {
+    "Perfil": [
+      {
+        "cod_perf": 11,
+        "login_perf": "anaoliveira",
+        "senha_perf": "senha123",
+        "email_perf": "ana.oliveira@email.com",
+        "modo_perf": "Cliente"
+      },
+      {
+        "cod_perf": 12,
+        "login_perf": "marcoscosta",
+        "senha_perf": "senha123",
+        "email_perf": "marcos.costa@email.com",
+        "modo_perf": "Cliente"
+      }
+    ],
+    "Endereco": [
+      {
+        "cod_end": 11,
+        "logradouro_end": "Rua dos Navegantes",
+        "numero_end": "100",
+        "complemento_end": null,
+        "bairro_end": "Boa Viagem",
+        "cidade_end": "Recife",
+        "estado_end": "PE",
+        "cep_end": "51020000"
+      },
+      {
+        "cod_end": 12,
+        "logradouro_end": "Avenida Atlântica",
+        "numero_end": "123",
+        "complemento_end": "Apto 501",
+        "bairro_end": "Copacabana",
+        "cidade_end": "Rio de Janeiro",
+        "estado_end": "RJ",
+        "cep_end": "22070001"
+      }
+    ],
+    "Cliente": [
+      {
+        "cod_cli": 11,
+        "nome_cli": "Ana Oliveira",
+        "data_nascimento_cli": "1990-05-10",
+        "telefone_cli": "(81) 98765-4321",
+        "sexo_cli": "F",
+        "cpf_cli": "12345678901",
+        "cod_end": 11,
+        "cod_perf": 11
+      },
+      {
+        "cod_cli": 12,
+        "nome_cli": "Marcos Costa",
+        "data_nascimento_cli": "1985-11-20",
+        "telefone_cli": "(21) 99876-5432",
+        "sexo_cli": "M",
+        "cpf_cli": "23456789012",
+        "cod_end": 12,
+        "cod_perf": 12
+      }
+    ],
+    "Categoria": [
+      { "cod_cat": 1, "nome_cat": "Biquíni" },
+      { "cod_cat": 2, "nome_cat": "Maiô" },
+      { "cod_cat": 3, "nome_cat": "Saída de Praia" },
+      { "cod_cat": 4, "nome_cat": "Acessórios" },
+      { "cod_cat": 5, "nome_cat": "Bermuda" },
+      { "cod_cat": 6, "nome_cat": "Sunga" },
+      { "cod_cat": 7, "nome_cat": "Kit" }
+    ],
+    "Produto": [
+      {
+        "cod_prod": 1,
+        "nome_prod": "Biquíni Serena Azul Royal",
+        "preco_prod": "R$ 249",
+        "preco_antigo_prod": "R$ 299",
+        "descricao_prod": "Biquíni tomara que caia com detalhe de estrela e proteção UV.",
+        "tamanho_prod": "M",
+        "cor_prod": "Azul Royal",
+        "genero": "feminino",
+        "cod_cat": 1,
+        "img": "biqui-1.png",
+        "cores": ["navy", "white"]
+      },
+      {
+        "cod_prod": 2,
+        "nome_prod": "Biquíni 3 Peças Maya Azul Marinho",
+        "preco_prod": "R$ 249",
+        "preco_antigo_prod": "R$ 299",
+        "descricao_prod": "Conjunto de biquíni frente única e shorts combinando.",
+        "tamanho_prod": "P",
+        "cor_prod": "Azul Marinho",
+        "genero": "feminino",
+        "cod_cat": 1,
+        "img": "biqui-2.png",
+        "cores": ["navy", "black"]
+      },
+      {
+        "cod_prod": 3,
+        "nome_prod": "Maiô Helena Marrom/Bege",
+        "preco_prod": "R$ 249",
+        "preco_antigo_prod": "R$ 319",
+        "descricao_prod": "Maiô elegante com decote cruzado e design bicolor.",
+        "tamanho_prod": "G",
+        "cor_prod": "Marrom/Bege",
+        "genero": "feminino",
+        "cod_cat": 2,
+        "img": "biqui-3.png",
+        "cores": ["brown", "beige"]
+      },
+      {
+        "cod_prod": 4,
+        "nome_prod": "Biquíni 3 Peças Maya Azul Marinho",
+        "preco_prod": "R$ 249",
+        "preco_antigo_prod": "R$ 299",
+        "descricao_prod": "Conjunto de biquíni frente única e shorts combinando.",
+        "tamanho_prod": "P",
+        "cor_prod": "Azul Marinho",
+        "genero": "feminino",
+        "cod_cat": 1,
+        "img": "biqui-4.png",
+        "cores": ["navy", "black"]
+      },
+      {
+        "cod_prod": 5,
+        "nome_prod": "Biquíni 3 Peças Maya Azul Marinho",
+        "preco_prod": "R$ 249",
+        "preco_antigo_prod": "R$ 299",
+        "descricao_prod": "Conjunto de biquíni frente única e shorts combinando.",
+        "tamanho_prod": "P",
+        "cor_prod": "Azul Marinho",
+        "genero": "feminino",
+        "cod_cat": 1,
+        "img": "biqui-5.png",
+        "cores": ["navy", "black"]
+      },
+      {
+        "cod_prod": 6,
+        "nome_prod": "Biquíni 3 Peças Maya Azul Marinho",
+        "preco_prod": "R$ 249",
+        "preco_antigo_prod": "R$ 299",
+        "descricao_prod": "Conjunto de biquíni frente única e shorts combinando.",
+        "tamanho_prod": "P",
+        "cor_prod": "Azul Marinho",
+        "genero": "feminino",
+        "cod_cat": 1,
+        "img": "biqui-6.png",
+        "cores": ["navy", "black"]
+      },
+      {
+        "cod_prod": 7,
+        "nome_prod": "Biquíni 3 Peças Maya Azul Marinho",
+        "preco_prod": "R$ 249",
+        "preco_antigo_prod": "R$ 299",
+        "descricao_prod": "Conjunto de biquíni frente única e shorts combinando.",
+        "tamanho_prod": "P",
+        "cor_prod": "Azul Marinho",
+        "genero": "feminino",
+        "cod_cat": 1,
+        "img": "biqui-7.png",
+        "cores": ["navy", "black"]
+      },
+      {
+        "cod_prod": 8,
+        "nome_prod": "Biquíni 3 Peças Maya Azul Marinho",
+        "preco_prod": "R$ 249",
+        "preco_antigo_prod": "R$ 299",
+        "descricao_prod": "Conjunto de biquíni frente única e shorts combinando.",
+        "tamanho_prod": "P",
+        "cor_prod": "Azul Marinho",
+        "genero": "feminino",
+        "cod_cat": 1,
+        "img": "biqui-8.png",
+        "cores": ["navy", "black"]
+      },
+      {
+        "cod_prod": 9,
+        "nome_prod": "Biquíni 3 Peças Maya Azul Marinho",
+        "preco_prod": "R$ 249",
+        "preco_antigo_prod": "R$ 299",
+        "descricao_prod": "Conjunto de biquíni frente única e shorts combinando.",
+        "tamanho_prod": "P",
+        "cor_prod": "Azul Marinho",
+        "genero": "feminino",
+        "cod_cat": 1,
+        "img": "biqui-9.png",
+        "cores": ["navy", "black"]
+      },
+      {
+        "cod_prod": 10,
+        "nome_prod": "Biquíni 3 Peças Maya Azul Marinho",
+        "preco_prod": "R$ 249",
+        "preco_antigo_prod": "R$ 299",
+        "descricao_prod": "Conjunto de biquíni frente única e shorts combinando.",
+        "tamanho_prod": "P",
+        "cor_prod": "Azul Marinho",
+        "genero": "feminino",
+        "cod_cat": 1,
+        "img": "biqui-10.png",
+        "cores": ["navy", "black"]
+      },
+      {
+        "cod_prod": 11,
+        "nome_prod": "Biquíni 3 Peças Maya Azul Marinho",
+        "preco_prod": "R$ 249",
+        "preco_antigo_prod": "R$ 299",
+        "descricao_prod": "Conjunto de biquíni frente única e shorts combinando.",
+        "tamanho_prod": "P",
+        "cor_prod": "Azul Marinho",
+        "genero": "feminino",
+        "cod_cat": 1,
+        "img": "biqui-11.png",
+        "cores": ["navy", "black"]
+      },
+      {
+        "cod_prod": 12,
+        "nome_prod": "Biquíni 3 Peças Maya Azul Marinho",
+        "preco_prod": "R$ 249",
+        "preco_antigo_prod": "R$ 299",
+        "descricao_prod": "Conjunto de biquíni frente única e shorts combinando.",
+        "tamanho_prod": "P",
+        "cor_prod": "Azul Marinho",
+        "genero": "feminino",
+        "cod_cat": 1,
+        "img": "biqui-12.png",
+        "cores": ["navy", "black"]
+      },
+      {
+        "cod_prod": 13,
+        "nome_prod": "Shorts Pietro Preto",
+        "preco_prod": "R$ 149",
+        "preco_antigo_prod": "R$ 199",
+        "descricao_prod": "Shorts masculino curto com zíper e tecido de secagem rápida.",
+        "tamanho_prod": "M",
+        "cor_prod": "Preto",
+        "genero": "masculino",
+        "cod_cat": 5,
+        "img": "sunga-1.png",
+        "cores": ["black", "brown"]
+      },
+      {
+        "cod_prod": 14,
+        "nome_prod": "Shorts Gabriel Branco",
+        "preco_prod": "R$ 139",
+        "preco_antigo_prod": "R$ 189",
+        "descricao_prod": "Shorts masculino branco com zíper lateral e cós preto.",
+        "tamanho_prod": "P",
+        "cor_prod": "Branco/Preto",
+        "genero": "masculino",
+        "cod_cat": 5,
+        "img": "sunga-2.png",
+        "cores": ["white", "lightgray"]
+      },
+      {
+        "cod_prod": 15,
+        "nome_prod": "Bermuda Thiago Azul/Branco",
+        "preco_prod": "R$ 159",
+        "preco_antigo_prod": "R$ 219",
+        "descricao_prod": "Bermuda masculina de banho com estampa em blocos de cores.",
+        "tamanho_prod": "G",
+        "cor_prod": "Azul/Branco",
+        "genero": "masculino",
+        "cod_cat": 5,
+        "img": "sunga-3.png",
+        "cores": ["navy", "white"]
+      },
+      {
+        "cod_prod": 16,
+        "nome_prod": "Sunga Bernardo Azul Marinho",
+        "preco_prod": "R$ 119",
+        "preco_antigo_prod": "R$ 159",
+        "descricao_prod": "Sunga boxer masculina com detalhe esportivo lateral.",
+        "tamanho_prod": "M",
+        "cor_prod": "Preto/Azul",
+        "genero": "masculino",
+        "cod_cat": 6,
+        "img": "sunga-4.png",
+        "cores": ["darkblue", "black"]
+      },
+      {
+        "cod_prod": 17,
+        "nome_prod": "Sunga Bernardo Azul Marinho",
+        "preco_prod": "R$ 119",
+        "preco_antigo_prod": "R$ 159",
+        "descricao_prod": "Sunga boxer masculina com detalhe esportivo lateral.",
+        "tamanho_prod": "M",
+        "cor_prod": "Preto/Azul",
+        "genero": "masculino",
+        "cod_cat": 6,
+        "img": "sunga-5.png",
+        "cores": ["darkblue", "black"]
+      },
+      {
+        "cod_prod": 18,
+        "nome_prod": "Sunga Bernardo Azul Marinho",
+        "preco_prod": "R$ 119",
+        "preco_antigo_prod": "R$ 159",
+        "descricao_prod": "Sunga boxer masculina com detalhe esportivo lateral.",
+        "tamanho_prod": "M",
+        "cor_prod": "Preto/Azul",
+        "genero": "masculino",
+        "cod_cat": 6,
+        "img": "sunga-6.png",
+        "cores": ["darkblue", "black"]
+      },
+      {
+        "cod_prod": 19,
+        "nome_prod": "Sunga Bernardo Azul Marinho",
+        "preco_prod": "R$ 119",
+        "preco_antigo_prod": "R$ 159",
+        "descricao_prod": "Sunga boxer masculina com detalhe esportivo lateral.",
+        "tamanho_prod": "M",
+        "cor_prod": "Preto/Azul",
+        "genero": "masculino",
+        "cod_cat": 6,
+        "img": "sunga-7.png",
+        "cores": ["darkblue", "black"]
+      }
+    ],
+    "Estoque": [
+      { "cod_esto": 11, "quantidade_esto": 20, "data_atualizacao_esto": "2026-07-10", "cod_prod": 11 },
+      { "cod_esto": 12, "quantidade_esto": 15, "data_atualizacao_esto": "2026-07-10", "cod_prod": 12 },
+      { "cod_esto": 13, "quantidade_esto": 12, "data_atualizacao_esto": "2026-07-11", "cod_prod": 19 },
+      { "cod_esto": 14, "quantidade_esto": 25, "data_atualizacao_esto": "2026-07-11", "cod_prod": 23 },
+      { "cod_esto": 15, "quantidade_esto": 18, "data_atualizacao_esto": "2026-07-12", "cod_prod": 25 },
+      { "cod_esto": 16, "quantidade_esto": 22, "data_atualizacao_esto": "2026-07-12", "cod_prod": 27 }
+    ],
+    "Cupom": [
+      { "cod_cup": 1, "nome_cup": "VERAO10", "perc_cup": 10.00, "data_validade_cup": "2026-12-31" },
+      { "cod_cup": 2, "nome_cup": "PRAIA15", "perc_cup": 15.00, "data_validade_cup": "2026-11-30" },
+      { "cod_cup": 3, "nome_cup": "MAREALTA20", "perc_cup": 20.00, "data_validade_cup": "2026-10-31" }
+    ],
+    "Compra": [
+      { "cod_com": 11, "data_venda_com": "2026-07-15", "valor_total_com": 498.00, "status_com": "Concluída", "valor_desconto_com": 0.00, "cod_cli": 11, "cod_end": 11 },
+      { "cod_com": 12, "data_venda_com": "2026-07-16", "valor_total_com": 498.00, "status_com": "Concluída", "valor_desconto_com": 0.00, "cod_cli": 12, "cod_end": 12 }
+    ],
+    "ItemCompra": [
+      { "cod_item_com": 16, "preco_unitario_prod_item_com": 249.00, "quant_prod_item_com": 1, "cod_com": 11, "cod_prod": 11 },
+      { "cod_item_com": 17, "preco_unitario_prod_item_com": 249.00, "quant_prod_item_com": 1, "cod_com": 11, "cod_prod": 12 }
+    ],
+    "Pagamento": [
+      { "cod_pag": 11, "tipo_pag": "PIX", "valor_pago_pag": 498.00, "status_pag": "Pago", "data_pag": "2026-07-15", "cod_com": 11 }
+    ],
+    "Avaliacao_Produto": [
+      { "cod_ava_prod": 11, "nota_ava": 5, "comentario_ava": "Biquíni com ajuste perfeito e material de alta qualidade.", "data_ava": "2026-07-18", "cod_cli": 11, "cod_prod": 11 }
+    ]
+  }
+}
