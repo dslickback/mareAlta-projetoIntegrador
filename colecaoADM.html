@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maré Alta - Coleção 2026</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="colecaoADM.css">
 </head>
@@ -18,7 +16,7 @@
     <div class="header-container">
         <div class="brand">
             <a href="#" class="brand-link">
-                <img src="unnamed.png" alt="Maré Alta Logo" class="header-logo-img"
+                <img src="logo.jpg" alt="Maré Alta Logo" class="header-logo-img"
                      onerror="this.style.display='none'">
                 <span class="brand-name">Maré Alta</span>
             </a>
@@ -42,20 +40,19 @@
 
     <nav class="nav-menu-dropdown" id="navMenu">
         <ul>
-            <li><a href="/mareAlta-projetoIntegrador/index.html#inicio">Início</a></li>
-            <li><a href="/mareAlta-projetoIntegrador/Sobre.html">Sobre</a></li>
-            <li><a href="/mareAlta-projetoIntegrador/index.html#contato">Contato</a></li>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
         </ul>
     </nav>
 </header>
 <section class="hero-banner" id="inicio">
-    <!-- Imagens Aba Masculina -->
+
     <img src="cardume-circulo.jpg" alt="" class="hero-shape cardume-circulo-left masculino-only">
     <img src="cardume-circulo.jpg" alt="" class="hero-shape cardume-circulo-right masculino-only">
     <img src="cardume-novo.jpg" alt="" class="hero-shape cardume-novo-left masculino-only">
     <img src="cardume-novo.jpg" alt="" class="hero-shape cardume-novo-right masculino-only">
 
-    <!-- Imagens Aba Feminina -->
      <img src="flores-feminino.jpg" alt="" class="hero-shape flor-left feminino-only">
     <img src="flores-feminino.jpg" alt="" class="hero-shape flor-right feminino-only">
     <img src="flor-hibisco.jpg" alt="" class="hero-shape flor-hibisco-left feminino-only">
@@ -111,7 +108,7 @@
     <div class="footer-content">
         <div class="footer-brand-col">
             <div class="footer-logo">
-                <img src="unnamed.png" alt="Maré Alta Logo" class="footer-logo-img"
+                <img src="logo.jpg" alt="Maré Alta Logo" class="footer-logo-img"
                      onerror="this.style.display='none'">
                 <span class="footer-brand-text">MARÉ ALTA</span>
             </div>
@@ -121,30 +118,25 @@
         <div class="footer-links-col">
             <h4>Navegação</h4>
             <ul>
-                <li><a href="/mareAlta-projetoIntegrador/index.html#inicio">Início</a></li>
+                <li><a href="#inicio">Início</a></li>
                 <li><a href="#colecao">Coleção</a></li>
-                <li><a href="/mareAlta-projetoIntegrador/Sobre.html">Sobre nós</a></li>
-                <li><a href="/mareAlta-projetoIntegrador/index.html#contato">Contato</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a href="#">Contato</a></li>
             </ul>
         </div>
 
         <div class="footer-links-col">
             <h4>Categorias</h4>
-            <ul>
-                <li><a href="colecao.html">Biquínis</a></li>
-                <li><a href="colecao.html">Maiôs</a></li>
-                <li><a href="colecao.html">Saídas de praia</a></li>
-                <li><a href="colecao.html">Acessórios</a></li>
-            </ul>
+            <ul id="footerCategories"></ul>
         </div>
 
         <div class="footer-links-col">
             <h4>Atendimento</h4>
             <ul>
-                <li><a href="/mareAlta-projetoIntegrador/index.html#contato">FAQ</a></li>
-                <li><a href="/mareAlta-projetoIntegrador/index.html#contato">Trocas e devoluções</a></li>
-                <li><a href="/mareAlta-projetoIntegrador/rastreio.html">Rastrear pedido</a></li>
-                <li><a href="/mareAlta-projetoIntegrador/index.html#contato">Fale conosco</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Trocas e devoluções</a></li>
+                <li><a href="#">Rastrear pedido</a></li>
+                <li><a href="#">Fale conosco</a></li>
             </ul>
         </div>
     </div>
@@ -152,9 +144,9 @@
     <div class="footer-bottom">
         <p>© 2026 Maré Alta. Todos os direitos reservados.</p>
         <div class="legal-links">
-            <a href="/mareAlta-projetoIntegrador/privacidade.html">Privacidade</a>
-            <a href="/mareAlta-projetoIntegrador/termos.html">Termos de uso</a>
-            <a href="/mareAlta-projetoIntegrador/cookies.html">Cookies</a>
+            <a href="#">Privacidade</a>
+            <a href="#">Termos de uso</a>
+            <a href="#">Cookies</a>
         </div>
     </div>
 </footer>
@@ -169,6 +161,7 @@
       <div class="form-group">
         <label for="pCat">Categoria</label>
         <select id="pCat" required class="form-control">
+
         </select>
       </div>
 
