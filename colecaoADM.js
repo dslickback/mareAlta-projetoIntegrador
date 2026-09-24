@@ -1,50 +1,35 @@
-document.addEventListener("DOMContentLoaded", () => {
-    if (typeof lucide !== "undefined") {
-        lucide.createIcons();
+document.addEventListener("DOMContentLoaded", async () => {
+    function renderIcons() {
+        if (typeof lucide !== "undefined" && lucide.createIcons) {
+            lucide.createIcons();
+        }
     }
+    
 
-    const produtos = {
-        masculino: [
-            {cat:"Bermuda", nome:"Shorts Pietro Preto - Curto com Zíper", preco:"R$ 149", antigo:"R$ 199", img:"https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=700&q=85", cores:["black","brown"]},
-            {cat:"Bermuda", nome:"Shorts Gabriel Branco - Zíper Lateral", preco:"R$ 139", antigo:"R$ 189", img:"https://images.unsplash.com/photo-1565084888279-aca607ecce0c?w=700&q=85", cores:["white","lightgray"]},
-            {cat:"Bermuda", nome:"Bermuda Thiago Azul Marinho - Estampa", preco:"R$ 159", antigo:"R$ 219", img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700&q=85", cores:["navy","white"]},
-            {cat:"Bermuda", nome:"Bermuda Enzo Azul - Estampa Folhagem", preco:"R$ 169", antigo:"R$ 229", img:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=700&q=85", cores:["cyan","navy"]},
-            {cat:"Sunga", nome:"Sunga Bernardo Azul Marinho", preco:"R$ 119", antigo:"R$ 159", img:"https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=700&q=85", cores:["darkblue","black"]},
-            {cat:"Bermuda", nome:"Bermuda Vinícius Verde Militar", preco:"R$ 159", antigo:"R$ 219", img:"https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=700&q=85", cores:["olive","black"]},
-            {cat:"Camisa", nome:"Camisa Surf Classic Off White", preco:"R$ 129", antigo:"R$ 179", img:"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=700&q=85", cores:["white","beige"]},
-            {cat:"Camisa", nome:"Camisa Maré Alta Azul Petróleo", preco:"R$ 139", antigo:"R$ 189", img:"https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=700&q=85", cores:["darkblue","green"]},
-            {cat:"Sunga", nome:"Sunga Wave Preta com Detalhes", preco:"R$ 109", antigo:"R$ 149", img:"https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=700&q=85", cores:["black","cyan"]},
-            {cat:"Kit", nome:"Kit Verão Maré Alta - Bermuda + Camisa", preco:"R$ 249", antigo:"R$ 329", img:"https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=700&q=85", cores:["navy","white"]},
-            {cat:"Acessórios", nome:"Boné Wave Bordado", preco:"R$ 89", antigo:"R$ 119", img:"https://images.unsplash.com/photo-1521369909029-2afed882baee?w=700&q=85", cores:["black","white"]},
-            {cat:"Acessórios", nome:"Chinelo Maré Alta Classic", preco:"R$ 69", antigo:"R$ 89", img:"https://images.unsplash.com/photo-1603487742131-4160ec999306?w=700&q=85", cores:["black","brown"]}
-        ],
+    let dadosBanco = JSON.parse(localStorage.getItem("mare_alta_db"));
 
-        feminino: [
-            {cat:"Biquíni", nome:"Biquíni Luna Azul Marinho", preco:"R$ 159", antigo:"R$ 219", img:"https://images.unsplash.com/photo-1506629905607-d9f297d9c4f6?w=700&q=85", cores:["navy","white"]},
-            {cat:"Biquíni", nome:"Biquíni Serena Preto com Amarração", preco:"R$ 169", antigo:"R$ 229", img:"https://images.unsplash.com/photo-1520006403909-838d6b92c22e?w=700&q=85", cores:["black","beige"]},
-            {cat:"Biquíni", nome:"Biquíni Maya Coral Texturizado", preco:"R$ 179", antigo:"R$ 239", img:"https://images.unsplash.com/photo-1543087903-1acb1ec7cebb?w=700&q=85", cores:["pink","red"]},
-            {cat:"Maiô", nome:"Maiô Aurora Azul com Recortes", preco:"R$ 199", antigo:"R$ 269", img:"https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?w=700&q=85", cores:["darkblue","cyan"]},
-            {cat:"Maiô", nome:"Maiô Ísis Preto Elegante", preco:"R$ 209", antigo:"R$ 279", img:"https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=700&q=85", cores:["black","white"]},
-            {cat:"Saída de Praia", nome:"Saída Sofia Bege Leve", preco:"R$ 189", antigo:"R$ 249", img:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=700&q=85", cores:["beige","white"]},
-            {cat:"Saída de Praia", nome:"Camisa Praia Helena Branca", preco:"R$ 179", antigo:"R$ 239", img:"https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=700&q=85", cores:["white","beige"]},
-            {cat:"Vestido", nome:"Vestido Brisa Azul Estampado", preco:"R$ 219", antigo:"R$ 289", img:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=700&q=85", cores:["cyan","white"]},
-            {cat:"Biquíni", nome:"Biquíni Flora Amarelo Solar", preco:"R$ 159", antigo:"R$ 219", img:"https://images.unsplash.com/photo-1551048632-24e4b26c2c1f?w=700&q=85", cores:["yellow","white"]},
-            {cat:"Kit", nome:"Kit Verão Feminino - Biquíni + Saída", preco:"R$ 269", antigo:"R$ 359", img:"https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700&q=85", cores:["beige","pink"]},
-            {cat:"Acessórios", nome:"Bolsa Praia Serena em Palha", preco:"R$ 129", antigo:"R$ 169", img:"https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?w=700&q=85", cores:["beige","brown"]},
-            {cat:"Acessórios", nome:"Chapéu Solar Maré Alta", preco:"R$ 99", antigo:"R$ 139", img:"https://images.unsplash.com/photo-1529958030586-3aae4ca485ff?w=700&q=85", cores:["beige","white"]}
-        ]
-    };
+    if (!dadosBanco) {
+        try {
+            const response = await fetch("produtos.json");
+            const data = await response.json();
+            dadosBanco = data.Mare_Alta;
+            localStorage.setItem("mare_alta_db", JSON.stringify(dadosBanco));
+        } catch (error) {
+            console.error("Erro ao carregar o JSON:", error);
+            dadosBanco = { Produto: [], Categoria: [] };
+        }
+    }
 
     const configuracoes = {
         masculino: {
             titulo: "Masculina",
             descricao: "Bermudas, sungas, camisas e kits para curtir o mar com estilo",
-            categorias: ["Todos", "Bermuda", "Sunga", "Camisa", "Kit", "Acessórios"]
+            categorias: ["Todos", "Bermuda", "Sunga", "Kit", "Acessórios"]
         },
         feminino: {
             titulo: "Feminina",
             descricao: "Biquínis, maiôs, saídas e peças leves para viver o verão com estilo",
-            categorias: ["Todos", "Biquíni", "Maiô", "Saída de Praia", "Vestido", "Kit", "Acessórios"]
+            categorias: ["Todos", "Biquíni", "Maiô", "Saída de Praia", "Kit", "Acessórios"]
         }
     };
 
@@ -62,167 +47,112 @@ document.addEventListener("DOMContentLoaded", () => {
     let filtroAtual = "Todos";
     let mostrandoTodos = false;
 
+    function obterNomeCategoria(codCat) {
+        const cat = dadosBanco.Categoria.find(c => c.cod_cat === codCat);
+        return cat ? cat.nome_cat : "Geral";
+    }
+
+    function salvarEAtualizar() {
+        localStorage.setItem("mare_alta_db", JSON.stringify(dadosBanco));
+        renderProdutos();
+    }
+
     function criarTags() {
         filterTags.innerHTML = "";
-
         configuracoes[generoAtual].categorias.forEach(categoria => {
             const button = document.createElement("button");
             button.className = "tag" + (categoria === filtroAtual ? " active" : "");
             button.textContent = categoria;
-
             button.addEventListener("click", () => {
                 filtroAtual = categoria;
                 mostrandoTodos = false;
                 criarTags();
                 renderProdutos();
             });
-
             filterTags.appendChild(button);
         });
     }
 
     function criarCores(cores) {
+        if (!cores || !Array.isArray(cores)) return "";
         return cores.map((cor, index) => {
             return `<span class="dot ${cor} ${index === 0 ? "active" : ""}" data-color="${cor}"></span>`;
         }).join("");
     }
 
-    // Substitua ou atualize a função renderProdutos no seu script.js
-function renderProdutos() {
-  const busca = searchInput.value.trim().toLowerCase();
+    function renderProdutos() {
+        const busca = searchInput.value.trim().toLowerCase();
 
-  let filtrados = produtos[generoAtual].filter((produto) => {
-    const categoriaOK = filtroAtual === 'Todos' || produto.cat === filtroAtual;
-    const buscaOK =
-      !busca ||
-      produto.nome.toLowerCase().includes(busca) ||
-      produto.cat.toLowerCase().includes(busca);
+        let filtrados = dadosBanco.Produto.filter(produto => {
+            const nomeCategoria = obterNomeCategoria(produto.cod_cat);
+            const generoOK = produto.genero === generoAtual;
+            const categoriaOK = filtroAtual === "Todos" || nomeCategoria === filtroAtual;
+            const buscaOK = !busca ||
+                produto.nome_prod.toLowerCase().includes(busca) ||
+                nomeCategoria.toLowerCase().includes(busca);
 
-    return categoriaOK && buscaOK;
-  });
+            return generoOK && categoriaOK && buscaOK;
+        });
 
-  const limite = mostrandoTodos
-    ? filtrados.length
-    : Math.min(6, filtrados.length);
-  const visiveis = filtrados.slice(0, limite);
+        const limite = mostrandoTodos ? filtrados.length : Math.min(6, filtrados.length);
+        const visiveis = filtrados.slice(0, limite);
 
-  // CARD DE ADICIONAR PRODUTO (Estilo Figma)
-  const addCardHTML = `
-        <article class="add-product-card" id="openAddModalBtn">
-            <div class="add-icon-circle">
-                <i data-lucide="plus"></i>
-            </div>
-            <span class="add-product-text">Adicionar Peça</span>
-        </article>
-    `;
-
-  // HTML dos produtos
-  const produtosHTML = visiveis
-    .map(
-      (produto) => `
-        <article class="product-card">
-            <div class="image-wrapper">
-                <img src="${produto.img}" alt="${
-        produto.nome
-      }" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700&q=80'">
-            </div>
-            <div class="card-info">
-                <span class="category-label">${produto.cat}</span>
-                <h3 class="product-title">${produto.nome}</h3>
-                <div class="rating">
-                    <span class="stars">★★★★★</span>
-                    <span class="score">4.9 (120)</span>
+        const addCardHTML = `
+            <article class="add-product-card" id="openAddModalBtn">
+                <div class="add-icon-circle">
+                    <i data-lucide="plus"></i>
                 </div>
-                <div class="card-footer">
-                    <div class="price-container">
-                        <span class="current-price">${produto.preco}</span>
-                        <span class="old-price">${
-                          produto.antigo || ''
-                        }</span>
+                <span class="add-product-text">Adicionar Peça</span>
+            </article>
+        `;
+
+        const produtosHTML = visiveis.map(produto => {
+            const nomeCategoria = obterNomeCategoria(produto.cod_cat);
+            return `
+            <article class="product-card">
+                <div class="image-wrapper">
+                    <img src="${produto.img}" alt="${produto.nome_prod}" loading="lazy" onerror="this.src='https://placehold.co/600x800/e2e8f0/1e293b?text=Sem+Imagem'">
+                </div>
+                <div class="card-info">
+                    <span class="category-label">${nomeCategoria}</span>
+                    <h3 class="product-title">${produto.nome_prod}</h3>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="score">4.9 (120)</span>
                     </div>
-                    <div class="color-options">
-                        ${criarCores(produto.cores)}
+                    <div class="card-footer">
+                        <div class="price-container">
+                            <span class="current-price">${produto.preco_prod}</span>
+                            <span class="old-price">${produto.preco_antigo_prod || ""}</span>
+                        </div>
+                        <div class="color-options">
+                            ${criarCores(produto.cores)}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </article>
-    `
-    )
-    .join('');
+            </article>
+            `;
+        }).join("");
 
-  // Renderiza o card de adicionar no topo da grade
-  grid.innerHTML = addCardHTML + produtosHTML;
+        grid.innerHTML = addCardHTML + produtosHTML;
 
-  emptyState.classList.toggle(
-    'visible',
-    filtrados.length === 0 && filtroAtual !== 'Todos'
-  );
+        if (emptyState) {
+            emptyState.classList.toggle("visible", filtrados.length === 0 && filtroAtual !== "Todos");
+        }
 
-  if (filtrados.length > 6) {
-    seeMoreBtn.style.display = 'inline-block';
-    seeMoreBtn.textContent = mostrandoTodos ? 'Ver menos' : 'Ver mais';
-  } else {
-    seeMoreBtn.style.display = 'none';
-  }
+        if (seeMoreBtn) {
+            if (filtrados.length > 6) {
+                seeMoreBtn.style.display = "inline-block";
+                seeMoreBtn.textContent = mostrandoTodos ? "Ver menos" : "Ver mais";
+            } else {
+                seeMoreBtn.style.display = "none";
+            }
+        }
 
-  ativarCores();
-  ativarModalLojista();
-  renderIcons();
-}
-
-// LÓGICA DO MODAL DO ADMINISTRADOR / LOJISTA
-function ativarModalLojista() {
-  const openBtn = document.getElementById('openAddModalBtn');
-  const modal = document.getElementById('productModal');
-  const closeBtn = document.getElementById('closeModalBtn');
-  const cancelBtn = document.getElementById('cancelModalBtn');
-  const form = document.getElementById('addProductForm');
-  const selectCat = document.getElementById('pCat');
-
-  // Preenche o Select com as categorias da aba ativa
-  if (selectCat) {
-    selectCat.innerHTML = configuracoes[generoAtual].categorias
-      .filter((cat) => cat !== 'Todos')
-      .map((cat) => `<option value="${cat}">${cat}</option>`)
-      .join('');
-  }
-
-  function abrir() {
-    modal.classList.add('active');
-  }
-  function fechar() {
-    modal.classList.remove('active');
-    form.reset();
-  }
-
-  if (openBtn) openBtn.addEventListener('click', abrir);
-  if (closeBtn) closeBtn.addEventListener('click', fechar);
-  if (cancelBtn) cancelBtn.addEventListener('click', fechar);
-
-  // Ao salvar o novo produto
-  form.onsubmit = (e) => {
-    e.preventDefault();
-
-    const novasCores = Array.from(
-      form.querySelectorAll('input[type="checkbox"]:checked')
-    ).map((cb) => cb.value);
-
-    const novoProduto = {
-      cat: document.getElementById('pCat').value,
-      nome: document.getElementById('pNome').value,
-      preco: document.getElementById('pPreco').value,
-      antigo: document.getElementById('pAntigo').value,
-      img: document.getElementById('pImg').value,
-      cores: novasCores.length > 0 ? novasCores : ['black'],
-    };
-
-    // Adiciona no topo da lista correspondente (masculino ou feminino)
-    produtos[generoAtual].unshift(novoProduto);
-
-    fechar();
-    renderProdutos();
-  };
-}
+        ativarCores();
+        ativarModalLojista();
+        renderIcons();
+    }
 
     function ativarCores() {
         document.querySelectorAll(".color-options .dot").forEach(dot => {
@@ -233,6 +163,64 @@ function ativarModalLojista() {
                 dot.classList.add("active");
             });
         });
+    }
+
+    function ativarModalLojista() {
+        const openBtn = document.getElementById("openAddModalBtn");
+        const modal = document.getElementById("productModal");
+        const closeBtn = document.getElementById("closeModalBtn");
+        const cancelBtn = document.getElementById("cancelModalBtn");
+        const form = document.getElementById("addProductForm");
+        const selectCat = document.getElementById("pCat");
+
+        if (!modal || !form) return;
+
+        if (selectCat) {
+            selectCat.innerHTML = configuracoes[generoAtual].categorias
+                .filter(cat => cat !== "Todos")
+                .map(cat => `<option value="${cat}">${cat}</option>`)
+                .join("");
+        }
+
+        function abrir() { modal.classList.add("active"); }
+        function fechar() { modal.classList.remove("active"); form.reset(); }
+
+        if (openBtn) openBtn.addEventListener("click", abrir);
+        if (closeBtn) closeBtn.addEventListener("click", fechar);
+        if (cancelBtn) cancelBtn.addEventListener("click", fechar);
+
+        form.onsubmit = (e) => {
+            e.preventDefault();
+
+            const nomeCatSelecionada = document.getElementById("pCat").value;
+            let catObj = dadosBanco.Categoria.find(c => c.nome_cat === nomeCatSelecionada);
+            
+            if (!catObj) {
+                catObj = { cod_cat: Date.now(), nome_cat: nomeCatSelecionada };
+                dadosBanco.Categoria.push(catObj);
+            }
+
+            const novasCores = Array.from(form.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+            const inputImg = document.getElementById("pImg").value;
+
+            const novoProduto = {
+                cod_prod: Date.now(),
+                nome_prod: document.getElementById("pNome").value,
+                preco_prod: document.getElementById("pPreco").value,
+                preco_antigo_prod: document.getElementById("pAntigo").value,
+                descricao_prod: "",
+                tamanho_prod: "M",
+                cor_prod: novasCores[0] || "Preto",
+                genero: generoAtual,
+                cod_cat: catObj.cod_cat,
+                img: inputImg.startsWith("http") || inputImg.startsWith("img/") ? inputImg : `img/${inputImg}`,
+                cores: novasCores.length > 0 ? novasCores : ["black"]
+            };
+
+            dadosBanco.Produto.unshift(novoProduto);
+            fechar();
+            salvarEAtualizar();
+        };
     }
 
     function trocarGenero(novoGenero) {
@@ -247,10 +235,10 @@ function ativarModalLojista() {
             btn.classList.toggle("active", btn.dataset.gender === generoAtual);
         });
 
-        heroGender.textContent = configuracoes[generoAtual].titulo;
-        heroDescription.textContent = configuracoes[generoAtual].descricao;
+        if (heroGender) heroGender.textContent = configuracoes[generoAtual].titulo;
+        if (heroDescription) heroDescription.textContent = configuracoes[generoAtual].descricao;
 
-        document.title = `Maré Alta - Ala ${configuracoes[generoAtual].titulo} 2026`;
+        document.title = `Maré Alta - Ala ${configuracoes[generoAtual].titulo}`;
 
         criarTags();
         renderProdutos();
@@ -258,6 +246,7 @@ function ativarModalLojista() {
     }
 
     function atualizarFooter() {
+        if (!footerCategories) return;
         footerCategories.innerHTML = configuracoes[generoAtual].categorias
             .slice(1, 5)
             .map(cat => `<li><a href="#">${cat}</a></li>`)
@@ -268,32 +257,20 @@ function ativarModalLojista() {
         btn.addEventListener("click", () => trocarGenero(btn.dataset.gender));
     });
 
-    seeMoreBtn.addEventListener("click", () => {
-        mostrandoTodos = !mostrandoTodos;
-        renderProdutos();
-    });
+    if (seeMoreBtn) {
+        seeMoreBtn.addEventListener("click", () => {
+            mostrandoTodos = !mostrandoTodos;
+            renderProdutos();
+        });
+    }
 
-    searchInput.addEventListener("input", () => {
-        mostrandoTodos = false;
-        renderProdutos();
-    });
+    if (searchInput) {
+        searchInput.addEventListener("input", () => {
+            mostrandoTodos = false;
+            renderProdutos();
+        });
+    }
 
-    // Menu hambúrguer
-    const menuToggleBtn = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
-
-    menuToggleBtn.addEventListener("click", event => {
-        event.stopPropagation();
-        navMenu.classList.toggle("active");
-    });
-
-    document.addEventListener("click", event => {
-        if (!navMenu.contains(event.target) && !menuToggleBtn.contains(event.target)) {
-            navMenu.classList.remove("active");
-        }
-    });
-
-    // Inicialização
     criarTags();
     renderProdutos();
     atualizarFooter();
