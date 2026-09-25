@@ -46,7 +46,7 @@ html {
   }
   
   .imagem-logo {
-    height: 55px;
+    height: 64px;
     width: auto;
     object-fit: contain;
     transition: transform 0.3s ease, height 0.4s ease;
@@ -57,7 +57,7 @@ html {
   }
   
   #cabecalho-principal.com-scroll .imagem-logo {
-    height: 42px;
+    height: 48px;
   }
   
   .links-navegacao {
