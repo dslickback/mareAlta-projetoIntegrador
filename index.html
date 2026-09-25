@@ -24,7 +24,7 @@
         .btn-comprar { width: 100%; background-color: #178195; color: #ffffff; border: none; padding: 12px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: background-color 0.3s; }
         .btn-comprar:hover { background-color: #126373; }
 
-        /* Meu carrosselzinho Infinito e "Peek" */
+        /* Carrossel Infinito e "Peek" */
         .secao-depoimentos { overflow: hidden; padding-bottom: 80px; }
         .carrossel-wrapper { 
             width: 100%; 
@@ -119,6 +119,11 @@
             <a href="#" class="botao-secundario">Novidades</a>
         </div>
     </section>
+
+    <!-- TRANSIÇÃO DE IMAGEM ENTRE DESTAQUE E CATEGORIAS -->
+    <div class="secao-transicao">
+        <img src="imagemTransicao.png" alt="Transição Fundo do Mar" class="imagem-transicao">
+    </div>
 
     <section class="secao-categorias" id="categorias">
         <img src="baleioes.png" alt="Fundo Coleções" class="imagem-fundo-secao">
@@ -247,7 +252,6 @@
         
         <div class="carrossel-wrapper" id="wrapper-depoimentos">
             <div class="carrossel-track" id="track-depoimentos">
-                
                 <div class="cartao-depoimento">
                     <div>
                         <div class="aspas-icone">“</div>
@@ -327,7 +331,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -517,7 +520,7 @@
 
     <script src="script.js"></script>
 
-    <!-- Carrossel infinito btw -->
+    <!-- Carrossel infinito -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const track = document.getElementById('track-depoimentos');
