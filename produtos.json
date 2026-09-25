@@ -80,7 +80,7 @@
         "cor_prod": "Azul Royal",
         "genero": "feminino",
         "cod_cat": 1,
-        "img": "biqui-1.png",
+        "img": "imgs/biqui-1.png",
         "cores": ["navy", "white"]
       },
       {
@@ -93,7 +93,7 @@
         "cor_prod": "Azul Marinho",
         "genero": "feminino",
         "cod_cat": 1,
-        "img": "biqui-2.png",
+        "img": "imgs/biqui-2.png",
         "cores": ["navy", "black"]
       },
       {
@@ -106,7 +106,7 @@
         "cor_prod": "Marrom/Bege",
         "genero": "feminino",
         "cod_cat": 2,
-        "img": "biqui-3.png",
+        "img": "imgs/biqui-3.png",
         "cores": ["brown", "beige"]
       },
       {
@@ -119,7 +119,7 @@
         "cor_prod": "Azul Marinho",
         "genero": "feminino",
         "cod_cat": 1,
-        "img": "biqui-4.png",
+        "img": "imgs/biqui-4.png",
         "cores": ["navy", "black"]
       },
       {
@@ -132,7 +132,7 @@
         "cor_prod": "Azul Marinho",
         "genero": "feminino",
         "cod_cat": 1,
-        "img": "biqui-5.png",
+        "img": "imgs/biqui-5.png",
         "cores": ["navy", "black"]
       },
       {
@@ -145,7 +145,7 @@
         "cor_prod": "Azul Marinho",
         "genero": "feminino",
         "cod_cat": 1,
-        "img": "biqui-6.png",
+        "img": "imgs/biqui-6.png",
         "cores": ["navy", "black"]
       },
       {
@@ -158,7 +158,7 @@
         "cor_prod": "Azul Marinho",
         "genero": "feminino",
         "cod_cat": 1,
-        "img": "biqui-7.png",
+        "img": "imgs/biqui-7.png",
         "cores": ["navy", "black"]
       },
       {
@@ -171,7 +171,7 @@
         "cor_prod": "Azul Marinho",
         "genero": "feminino",
         "cod_cat": 1,
-        "img": "biqui-8.png",
+        "img": "imgs/biqui-8.png",
         "cores": ["navy", "black"]
       },
       {
@@ -184,7 +184,7 @@
         "cor_prod": "Azul Marinho",
         "genero": "feminino",
         "cod_cat": 1,
-        "img": "biqui-9.png",
+        "img": "imgs/biqui-9.png",
         "cores": ["navy", "black"]
       },
       {
@@ -197,7 +197,7 @@
         "cor_prod": "Azul Marinho",
         "genero": "feminino",
         "cod_cat": 1,
-        "img": "biqui-10.png",
+        "img": "imgs/biqui-10.png",
         "cores": ["navy", "black"]
       },
       {
@@ -210,7 +210,7 @@
         "cor_prod": "Azul Marinho",
         "genero": "feminino",
         "cod_cat": 1,
-        "img": "biqui-11.png",
+        "img": "imgs/biqui-11.png",
         "cores": ["navy", "black"]
       },
       {
@@ -223,7 +223,7 @@
         "cor_prod": "Azul Marinho",
         "genero": "feminino",
         "cod_cat": 1,
-        "img": "biqui-12.png",
+        "img": "imgs/biqui-12.png",
         "cores": ["navy", "black"]
       },
       {
@@ -236,7 +236,7 @@
         "cor_prod": "Preto",
         "genero": "masculino",
         "cod_cat": 5,
-        "img": "sunga-1.png",
+        "img": "imgs/sunga-1.png",
         "cores": ["black", "brown"]
       },
       {
@@ -249,7 +249,7 @@
         "cor_prod": "Branco/Preto",
         "genero": "masculino",
         "cod_cat": 5,
-        "img": "sunga-2.png",
+        "img": "imgs/sunga-2.png",
         "cores": ["white", "lightgray"]
       },
       {
@@ -262,7 +262,7 @@
         "cor_prod": "Azul/Branco",
         "genero": "masculino",
         "cod_cat": 5,
-        "img": "sunga-3.png",
+        "img": "imgs/sunga-3.png",
         "cores": ["navy", "white"]
       },
       {
@@ -275,7 +275,7 @@
         "cor_prod": "Preto/Azul",
         "genero": "masculino",
         "cod_cat": 6,
-        "img": "sunga-4.png",
+        "img": "imgs/sunga-4.png",
         "cores": ["darkblue", "black"]
       },
       {
@@ -288,7 +288,7 @@
         "cor_prod": "Preto/Azul",
         "genero": "masculino",
         "cod_cat": 6,
-        "img": "sunga-5.png",
+        "img": "imgs/sunga-5.png",
         "cores": ["darkblue", "black"]
       },
       {
@@ -301,7 +301,7 @@
         "cor_prod": "Preto/Azul",
         "genero": "masculino",
         "cod_cat": 6,
-        "img": "sunga-6.png",
+        "img": "imgs/sunga-6.png",
         "cores": ["darkblue", "black"]
       },
       {
@@ -314,7 +314,7 @@
         "cor_prod": "Preto/Azul",
         "genero": "masculino",
         "cod_cat": 6,
-        "img": "sunga-7.png",
+        "img": "imgs/sunga-7.png",
         "cores": ["darkblue", "black"]
       }
     ],
