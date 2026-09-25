@@ -24,7 +24,7 @@
         .btn-comprar { width: 100%; background-color: #178195; color: #ffffff; border: none; padding: 12px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: background-color 0.3s; }
         .btn-comprar:hover { background-color: #126373; }
 
-        /* Carrossel Infinito e "Peek" */
+        /* Meu carrosselzinho Infinito e "Peek" */
         .secao-depoimentos { overflow: hidden; padding-bottom: 80px; }
         .carrossel-wrapper { 
             width: 100%; 
@@ -120,11 +120,6 @@
         </div>
     </section>
 
-    <!-- TRANSIÇÃO DE IMAGEM ENTRE DESTAQUE E CATEGORIAS -->
-    <div class="secao-transicao">
-        <img src="imagemTransicao.png" alt="Transição Fundo do Mar" class="imagem-transicao">
-    </div>
-
     <section class="secao-categorias" id="categorias">
         <img src="baleioes.png" alt="Fundo Coleções" class="imagem-fundo-secao">
         
@@ -155,7 +150,7 @@
         <h2 class="titulo-produtos">Destaques da <span class="destaque-dourado-italic">Coleção</span></h2>
         <div class="grid-produtos">
             <div class="cartao-produto">
-                <img src="https://images.unsplash.com/photo-1572913017567-02f06497f1f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&h=500" alt="Biquíni Coral Sunset">
+                <img src="imgs/biqui-1.png" alt="Biquíni Coral Sunset">
                 <div class="info-produto">
                     <h3>Biquíni Coral Sunset</h3>
                     <p>R$ 189,90</p>
@@ -163,7 +158,7 @@
                 </div>
             </div>
             <div class="cartao-produto">
-                <img src="https://images.unsplash.com/photo-1605763240000-7e93b172d754?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&h=500" alt="Saída de Praia Boho">
+                <img src="imgs/biqui-2.png" alt="Saída de Praia Boho">
                 <div class="info-produto">
                     <h3>Saída Boho Chic</h3>
                     <p>R$ 229,90</p>
@@ -171,7 +166,7 @@
                 </div>
             </div>
             <div class="cartao-produto">
-                <img src="https://images.unsplash.com/photo-1505027429113-228795908f51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&h=500" alt="Sunga Classic Navy">
+                <img src="imgs/sunga-1.png" alt="Sunga Classic Navy">
                 <div class="info-produto">
                     <h3>Sunga Classic Navy</h3>
                     <p>R$ 149,90</p>
@@ -179,7 +174,7 @@
                 </div>
             </div>
             <div class="cartao-produto">
-                <img src="https://images.unsplash.com/photo-1562183241-b937e95585b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400&h=500" alt="Maiô Waves Turquesa">
+                <img src="imgs/biqui-3.png" alt="Maiô Waves Turquesa">
                 <div class="info-produto">
                     <h3>Maiô Waves Turquesa</h3>
                     <p>R$ 259,90</p>
@@ -252,6 +247,7 @@
         
         <div class="carrossel-wrapper" id="wrapper-depoimentos">
             <div class="carrossel-track" id="track-depoimentos">
+                
                 <div class="cartao-depoimento">
                     <div>
                         <div class="aspas-icone">“</div>
@@ -331,6 +327,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -520,7 +517,7 @@
 
     <script src="script.js"></script>
 
-    <!-- Carrossel infinito -->
+    <!-- Carrossel infinito btw -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const track = document.getElementById('track-depoimentos');
