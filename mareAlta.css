@@ -53,11 +53,11 @@ html {
   }
   
   .logotipo:hover .imagem-logo {
-    transform: scale(2.05);
+    transform: scale(1.10);
   }
   
   #cabecalho-principal.com-scroll .imagem-logo {
-    height: 42px;
+    height: 80px;
   }
   
   .links-navegacao {
