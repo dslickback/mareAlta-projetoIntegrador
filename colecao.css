@@ -141,6 +141,19 @@ body {
     background: #f0f0f0;
 }
 
+.botao-entrar {
+    color: #ffffff;
+    text-decoration: none;
+    border-color: #178195;
+    padding: 8px 28px;
+    border-radius: 50px;
+    font-size: 15px;
+    transition: all 0.4s ease;
+    transform: translateX(0);
+    background-color: #178195;
+  }
+  
+
 .nav-menu-dropdown {
     position: absolute;
     top: calc(100% + 2px);
@@ -274,7 +287,6 @@ body.feminino .hero-shape {
     }
 }
 
-/* POSICIONAMENTO E REGRAS DAS FLORES (ABA FEMININA) */
 .flor-left {
     width: 220px;
     height: auto;
@@ -288,17 +300,15 @@ body.feminino .hero-shape {
     height: auto;
     right: -20px;
     top: 50%;
-    transform: translateY(-50%) scaleX(-1) rotate(-10deg); /* Espelhada para simetria */
+    transform: translateY(-50%) scaleX(-1) rotate(-10deg);
 }
 
-/* CONTROLE DE EXIBIÇÃO POR ABA */
 
-/* Quando estiver no MASCULINO: mostra peixes, esconde flores */
 body:not(.feminino) .feminino-only {
     display: none !important;
 }
 
-/* Quando estiver no FEMININO: mostra flores, esconde peixes */
+
 body.feminino .masculino-only {
     display: none !important;
 }
@@ -307,49 +317,41 @@ body.feminino .feminino-only {
     display: block !important;
 }
 
-/* RESPONSIVIDADE (Ajuste para celulares) */
+
 @media (max-width: 768px) {
     .flor-left, .flor-right {
         width: 130px;
     }
 }
 
-/* =========================================================
-   HIBISCOS DA ABA FEMININA (Espelhados com o Cardume Novo)
-   ========================================================= */
 
-/* Hibisco da Esquerda (Mais para baixo) */
 .flor-hibisco-left {
     width: 200px;
     height: auto;
     left: 20%;  
-    top: 105px;         /* Próximo do texto central */
-    bottom: -15px;      /* Posicionado na parte inferior */
+    top: 105px;        
+    bottom: -15px;     
     opacity: 0.85;
     transition: opacity 0.3s ease;
 }
 
-/* Hibisco da Direita (Mais para cima + Espelhado) */
+
 .flor-hibisco-right {
     width: 200px;
     height: auto;
-    right: 20%;         /* Próximo do texto central */
-    top: 15px;          /* Posicionado na parte superior */
-    transform: scaleX(-1); /* Inverte horizontalmente para criar simetria */
+    right: 20%;        
+    top: 15px;          
+    transform: scaleX(-1); 
     opacity: 0.85;
     transition: opacity 0.3s ease;
 }
 
-/* =========================================================
-   CONTROLE DE EXIBIÇÃO POR ABA (VISIBILIDADE)
-   ========================================================= */
 
-/* Quando a aba Feminina NÃO estiver ativa: esconde elementos femininos */
 body:not(.feminino) .feminino-only {
     display: none !important;
 }
 
-/* Quando a aba Feminina ESTIVER ativa: mostra elementos femininos e esconde masculinos */
+
 body.feminino .masculino-only {
     display: none !important;
 }
@@ -357,8 +359,6 @@ body.feminino .masculino-only {
 body.feminino .feminino-only {
     display: block !important;
 }
-
-/* Oculta as flores do meio em telas menores para não sobrepor o texto no celular */
 @media (max-width: 1100px) {
     .flor-hibisco-left,
     .flor-hibisco-right {
@@ -695,9 +695,9 @@ body.feminino .section-title em {
     width: 100%;
     height: 140px;
     background-color: var(--banner-green-dark);
-    background-image: url('onda1.png'); /* Nome da sua imagem de onda */
-    background-repeat: no-repeat; /* IMPEDE A REPETIÇÃO/RÉPLICA DA IMAGEM */
-    background-position: bottom center; /* Alinha a onda na parte inferior */
+    background-image: url('onda1.png'); 
+    background-repeat: no-repeat; 
+    background-position: bottom center; 
     background-size: cover;
 }
 
