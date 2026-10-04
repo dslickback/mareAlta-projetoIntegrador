@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho de Compras</title>
+  <link rel="stylesheet" href="carrinho.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Cabeçalho / Navbar -->
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="imgs/logo.png" alt="Logo">
+        </a>
+      </div>
+      <nav class="nav-menu">
+        <a href="index.html">Início</a>
+        <a href="colecao.html">Coleção</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn search-btn" aria-label="Pesquisar"><i class="fas fa-search"></i></button>
+        <a href="login.html" class="btn-entrar">Entrar</a>
+        <a href="carrinho.html" class="icon-btn cart-btn" aria-label="Carrinho"><i class="fas fa-shopping-bag"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="cart-wrapper">
+    <div class="cart-container">
+
+      <!-- Barra de Título -->
+      <div class="cart-header-card">
+        <label class="custom-checkbox">
+          <input type="checkbox" id="select-all">
+          <span class="checkmark"></span>
+        </label>
+        <h2>TODOS OS ITENS (05)</h2>
+      </div>
+
+      <!-- Filtro Todos -->
+      <div class="filter-bar">
+        <button class="btn-filter active">Todos</button>
+      </div>
+
+      <!-- Lista de Produtos do Carrinho -->
+      <div class="cart-items-list">
+
+        <!-- Produto 1: Biquíni Luana -->
+        <div class="cart-item-card" data-price="138.00">
+          <div class="item-select">
+            <label class="custom-checkbox">
+              <input type="checkbox" class="item-checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="item-image">
+            <img src="imgs/biqui-3.png" alt="Biquíni Conjunto Luana">
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">Biquíni Conjunto 3 Peças Luana Amarelo Listrado - Top Cortininha de Amarração com Calcinha e Saia Curta Ajustável</h3>
+            <div class="item-badges">
+              <span class="badge badge-purple">Tamanho: G</span>
+              <div class="select-badge badge-purple">
+                <span>Quantidade: 1</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produto 2: Maiô Alice -->
+        <div class="cart-item-card" data-price="120.00">
+          <div class="item-select">
+            <label class="custom-checkbox">
+              <input type="checkbox" class="item-checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="item-image">
+            <img src="imgs/biqui-1.png" alt="Maiô Alice Azul">
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">Maiô Conjunto Alice Azul Celeste - Top Canelado Transpassado com Alças Largas e Calcinha Cós Alto</h3>
+            <div class="item-badges">
+              <span class="badge badge-purple">Tamanho: G</span>
+              <div class="select-badge badge-purple">
+                <span>Quantidade: 1</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produto 3: Maiô Helena -->
+        <div class="cart-item-card" data-price="115.00">
+          <div class="item-select">
+            <label class="custom-checkbox">
+              <input type="checkbox" class="item-checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="item-image">
+            <img src="imgs/biqui-12.png" alt="Maiô Helena Marrom">
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">Maiô Transpassado Helena Marrum/Bege - Decote Cruzado Bicolor Busto Estruturado e Modelagem Modeladora</h3>
+            <div class="item-badges">
+              <span class="badge badge-purple">Tamanho: G</span>
+              <div class="select-badge badge-purple">
+                <span>Quantidade: 1</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produto 4: Bermuda Vinícius -->
+        <div class="cart-item-card" data-price="138.00">
+          <div class="item-select">
+            <label class="custom-checkbox">
+              <input type="checkbox" class="item-checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="item-image">
+            <img src="imgs/sunga-1.png" alt="Bermuda Vinícius Verde">
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">Bermuda de Praia Vinícius Verde Militar - Estampa Botânica Floral com Cordão Cru Ajustável</h3>
+            <div class="item-badges">
+              <span class="badge badge-teal">Tamanho: G</span>
+              <div class="select-badge badge-teal">
+                <span>Quantidade: 1</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produto 5: Sunga Gabriel -->
+        <div class="cart-item-card" data-price="95.00">
+          <div class="item-select">
+            <label class="custom-checkbox">
+              <input type="checkbox" class="item-checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="item-image">
+            <img src="imgs/sunga-7.png" alt="Sunga Gabriel">
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">Sunga de Praia Gabriel Branco/Preto - Detalhe de Zíper Lateral com Cós Contrastante</h3>
+            <div class="item-badges">
+              <span class="badge badge-teal">Tamanho: G</span>
+              <div class="select-badge badge-teal">
+                <span>Quantidade: 1</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Resumo / Itens Selecionados -->
+      <div class="summary-card">
+        <h3 class="summary-title">Itens Selecionados :</h3>
+        <div class="summary-content">
+          <div class="selected-thumbs" id="selected-thumbs"></div>
+          <div class="price-box">
+            <span class="price-label">Preço estimado:</span>
+            <div class="price-tag" id="total-price">R$ 276,00</div>
+            
+            <div class="payment-methods">
+              <span class="payment-title">Pagamento</span>
+              <div class="payment-grid">
+                <span class="pay-icon mastercard"></span>
+                <span class="pay-icon visa"></span>
+                <span class="pay-icon elo"></span>
+                <span class="pay-icon diners"></span>
+                <span class="pay-icon amex"></span>
+                <span class="pay-icon elo2"></span>
+                <span class="pay-icon hiper"></span>
+                <span class="pay-icon boleto"></span>
+                <span class="pay-icon paypal"></span>
+                <span class="pay-icon picpay"></span>
+                <span class="pay-icon pix"></span>
+                <span class="pay-icon caixa"></span>
+                <span class="pay-icon applepay"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html">
+          <img src="imgs/logo.png" alt="Logo Footer" class="footer-logo">
+        </a>
+        <p>A marca para suas praias e piscina em cada estação do ano.</p>
+      </div>
+      <div class="footer-links">
+        <div class="col">
+          <h4>Navegação</h4>
+          <a href="index.html">Início</a>
+          <a href="colecao.html">Coleção</a>
+          <a href="sobre.html">Sobre Nós</a>
+          <a href="contato.html">Contato</a>
+        </div>
+        <div class="col">
+          <h4>Categorias</h4>
+          <a href="colecao.html?categoria=biquinis">Biquínis</a>
+          <a href="colecao.html?categoria=maios">Maiôs</a>
+          <a href="colecao.html?categoria=masculino">Moda Masculina</a>
+          <a href="colecao.html?categoria=acessorios">Acessórios</a>
+        </div>
+        <div class="col">
+          <h4>Atendimento</h4>
+          <a href="faq.html">FAQ</a>
+          <a href="trocas.html">Trocas e Devoluções</a>
+          <a href="rastreamento.html">Rastreamento</a>
+          <a href="contato.html">Fale Conosco</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Todos os Direitos Reservados.</p>
+      <div class="legal-links">
+        <a href="privacidade.html">Privacidade</a>
+        <a href="termos.html">Termos de uso</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="carrinho.js"></script>
+</body>
+</html>
