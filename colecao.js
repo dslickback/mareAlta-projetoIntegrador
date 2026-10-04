@@ -225,3 +225,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderProdutos();
     atualizarFooter();
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const cartButton = document.querySelector('button[aria-label="Sacola de compras"]');
+
+  if (cartButton) {
+    cartButton.addEventListener("click", () => {
+      window.location.href = "carrinho.html";
+    });
+  }
+});
+
