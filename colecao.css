@@ -227,41 +227,16 @@ body {
 }
 
 /* 1. CARDUMES EM CÍRCULO (EXTREMIDADES) */
+
+
 .cardume-circulo-left {
-    width: 220px;
+    width: 650px;
     height: auto;
-    left: -30px;
-    top: -20px;
-    transform: rotate(-10deg);
+    left: -60px;
+    top: 35%;
+    transform: translateY(-55%) scaleX(-1) rotate(0deg);
 }
 
-.cardume-circulo-right {
-    width: 240px;
-    height: auto;
-    right: -30px;
-    top: -10px;
-    transform: rotate(140deg);
-}
-
-.cardume-novo-left {
-    width: 200px;
-    height: auto;
-    left: 20%;  
-    top: 145px;
-    bottom: -15px;
-   filter: brightness(1.0) contrast(0.95);
-    opacity: 0.85;
-}
-
-.cardume-novo-right {
-    width: 200px;
-    height: auto;
-    right: 25%;         /* Próximo do texto central */
-    top: 30px;
-    transform: scaleX(-1);
-    filter: brightness(1.0) contrast(0.95);
-    opacity: 0.85;
-}
 
 /* Esconde elementos ou suaviza na aba feminina */
 body.feminino .hero-shape {
@@ -287,21 +262,15 @@ body.feminino .hero-shape {
     }
 }
 
-.flor-left {
-    width: 220px;
-    height: auto;
-    left: -20px;
-    top: 50%;
-    transform: translateY(-50%) rotate(-10deg);
-}
-
 .flor-right {
-    width: 220px;
+    width: 500px;
     height: auto;
     right: -20px;
-    top: 50%;
-    transform: translateY(-50%) scaleX(-1) rotate(-10deg);
+    top: 35%;
+    transform: translateY(-50%) scaleX(-1) rotate(-180deg);
 }
+
+
 
 
 body:not(.feminino) .feminino-only {
