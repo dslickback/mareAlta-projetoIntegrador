@@ -210,56 +210,25 @@ body {
     object-fit: contain;
     z-index: 1;
     transition: opacity 0.3s ease;
-    /* Removido mix-blend-mode para usar PNG transparente limpo */
 }
 
-/* 1. CARDUMES EM CÍRCULO (EXTREMIDADES) */
 .cardume-circulo-left {
-    width: 220px;
+    width: 650px;
     height: auto;
-    left: -30px;
-    top: -20px;
-    transform: rotate(-10deg);
+    left: -60px;
+    top: 35%;
+    transform: translateY(-55%) scaleX(-1) rotate(0deg);
 }
 
-.cardume-circulo-right {
-    width: 240px;
-    height: auto;
-    right: -30px;
-    top: -10px;
-    transform: rotate(140deg);
-}
-
-.cardume-novo-left {
-    width: 200px;
-    height: auto;
-    left: 20%;  
-    top: 145px;
-    bottom: -15px;
-   filter: brightness(1.0) contrast(0.95);
-    opacity: 0.85;
-}
-
-.cardume-novo-right {
-    width: 200px;
-    height: auto;
-    right: 25%;         /* Próximo do texto central */
-    top: 30px;
-    transform: scaleX(-1);
-    filter: brightness(1.0) contrast(0.95);
-    opacity: 0.85;
-}
-
-/* Esconde elementos ou suaviza na aba feminina */
 body.feminino .hero-shape {
-    display: none; /* Se quiser ocultar os cardumes masculinos na aba feminina */
+    display: none;
 }
 
-/* RESPONSIVIDADE (Ajuste automático para celulares/tablets) */
+
 @media (max-width: 1100px) {
     .cardume-novo-left,
     .cardume-novo-right {
-        display: none; /* Esconde os cardumes do meio em telas menores para não encostar no texto */
+        display: none;
     }
 }
 
@@ -274,31 +243,18 @@ body.feminino .hero-shape {
     }
 }
 
-/* POSICIONAMENTO E REGRAS DAS FLORES (ABA FEMININA) */
-.flor-left {
-    width: 220px;
-    height: auto;
-    left: -20px;
-    top: 50%;
-    transform: translateY(-50%) rotate(-10deg);
-}
-
 .flor-right {
-    width: 220px;
+    width: 500px;
     height: auto;
     right: -20px;
-    top: 50%;
-    transform: translateY(-50%) scaleX(-1) rotate(-10deg); /* Espelhada para simetria */
+    top: 35%;
+    transform: translateY(-50%) scaleX(-1) rotate(-180deg);
 }
 
-/* CONTROLE DE EXIBIÇÃO POR ABA */
-
-/* Quando estiver no MASCULINO: mostra peixes, esconde flores */
 body:not(.feminino) .feminino-only {
     display: none !important;
 }
 
-/* Quando estiver no FEMININO: mostra flores, esconde peixes */
 body.feminino .masculino-only {
     display: none !important;
 }
@@ -307,49 +263,18 @@ body.feminino .feminino-only {
     display: block !important;
 }
 
-/* RESPONSIVIDADE (Ajuste para celulares) */
 @media (max-width: 768px) {
     .flor-left, .flor-right {
         width: 130px;
     }
 }
 
-/* =========================================================
-   HIBISCOS DA ABA FEMININA (Espelhados com o Cardume Novo)
-   ========================================================= */
 
-/* Hibisco da Esquerda (Mais para baixo) */
-.flor-hibisco-left {
-    width: 200px;
-    height: auto;
-    left: 20%;  
-    top: 105px;         /* Próximo do texto central */
-    bottom: -15px;      /* Posicionado na parte inferior */
-    opacity: 0.85;
-    transition: opacity 0.3s ease;
-}
-
-/* Hibisco da Direita (Mais para cima + Espelhado) */
-.flor-hibisco-right {
-    width: 200px;
-    height: auto;
-    right: 20%;         /* Próximo do texto central */
-    top: 15px;          /* Posicionado na parte superior */
-    transform: scaleX(-1); /* Inverte horizontalmente para criar simetria */
-    opacity: 0.85;
-    transition: opacity 0.3s ease;
-}
-
-/* =========================================================
-   CONTROLE DE EXIBIÇÃO POR ABA (VISIBILIDADE)
-   ========================================================= */
-
-/* Quando a aba Feminina NÃO estiver ativa: esconde elementos femininos */
 body:not(.feminino) .feminino-only {
     display: none !important;
 }
 
-/* Quando a aba Feminina ESTIVER ativa: mostra elementos femininos e esconde masculinos */
+
 body.feminino .masculino-only {
     display: none !important;
 }
@@ -358,7 +283,7 @@ body.feminino .feminino-only {
     display: block !important;
 }
 
-/* Oculta as flores do meio em telas menores para não sobrepor o texto no celular */
+
 @media (max-width: 1100px) {
     .flor-hibisco-left,
     .flor-hibisco-right {
