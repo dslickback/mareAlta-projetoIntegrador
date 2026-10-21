@@ -70,3 +70,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Execução inicial
   updateCartSummary();
 });
+
+// --- TRANSIÇÃO DO CABEÇALHO ---
+const cabecalho = document.getElementById("cabecalho-principal");
+const logoHeader = document.getElementById("header-logo");
+
+function checarScrollHeader() {
+  if (cabecalho) {
+    if (window.scrollY > 60) {
+      cabecalho.classList.add("com-scroll"); // Adiciona a classe que muda a cor para bege
+      if (logoHeader) logoHeader.src = "meunome.png"; // Troca a logo
+    } else {
+      cabecalho.classList.remove("com-scroll"); // Remove a cor bege (volta a transparente)
+      if (logoHeader) logoHeader.src = "seunome.png"; // Volta a logo inicial
+    }
+  }
+}
+
+// Escuta o evento de rolamento da página
+window.addEventListener("scroll", checarScrollHeader);
+checarScrollHeader(); // Executa ao carregar para aplicar caso a página já inicie com scroll
