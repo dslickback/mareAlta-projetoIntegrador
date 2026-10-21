@@ -43,7 +43,7 @@ body {
 }
 
 .logo img {
-  height: 40px;
+  height: 60px;
   object-fit: contain;
   transition: opacity 0.3s ease;
 }
@@ -105,7 +105,7 @@ body {
 }
 
 .btn-entrar:hover {
-  background-color: #38bdf8;
+  background-color: #7ed0ff;
   color: #0f172a;
 }
 
@@ -168,7 +168,7 @@ body {
 }
 
 .cart-item-card {
-  background-color: #9bd7fa;
+  background-color: #7ed0ff;
   color: #121829;
   border-radius: 10px;
   padding: 15px 20px;
@@ -217,7 +217,7 @@ body {
 }
 
 .badge-purple, .badge-teal {
-  background-color: #d97706;
+  background-color: #eca85a;
   color: #ffffff;
 }
 
@@ -260,8 +260,8 @@ body {
 }
 
 .custom-checkbox input:checked ~ .checkmark {
-  background-color: #d97706;
-  border-color: #d97706;
+  background-color: #eca85a;
+  border-color: #eca85a;
 }
 
 .checkmark:after {
@@ -286,8 +286,8 @@ body {
 
 /* Card de Resumo */
 .summary-card {
-  background-color: #9bd7fa;
-  color: #121829;
+  background-color: #7ed0ff;
+  color: #000000;
   border-radius: 10px;
   padding: 20px;
 }
@@ -317,7 +317,7 @@ body {
   height: 90px;
   object-fit: cover;
   border-radius: 4px;
-  border: 1px solid #9bd7fa;
+  border: 1px solid #7ed0ff;
 }
 
 .price-box {
@@ -391,7 +391,7 @@ body {
 }
 
 .footer-logo {
-  height: 40px;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -438,7 +438,7 @@ body {
 }
 
 .footer-links a:hover {
-  color: #38bdf8;
+  color: #7ed0ff;
 }
 
 .footer-bottom {
