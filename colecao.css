@@ -140,6 +140,28 @@ body {
 .icon-btn:hover {
     background: #f0f0f0;
 }
+.btn-add-cart {
+    width: 100%;
+    margin-top: 12px;
+    background-color: var(--banner-green);
+    color: #ffffff;
+    border: none;
+    padding: 9px 0;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-add-cart:hover {
+    background-color: var(--banner-green-dark);
+    transform: translateY(-1px);
+}
+
+body.feminino .btn-add-cart {
+    background-color: var(--banner-green);
+}
 
 .botao-entrar {
     color: #ffffff;
