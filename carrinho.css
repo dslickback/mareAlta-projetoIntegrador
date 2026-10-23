@@ -1,3 +1,17 @@
+/* --- PALETA DE CORES (VARIÁVEIS) --- */
+:root {
+  --bg-page: #0d1322;            /* Fundo escuro premium (Azul Oceano Profundo) */
+  --header-scroll-bg: #f8f3ea;   /* Fundo Bege Areia ao rolar */
+  --card-bg: #cbe3f7;            /* Azul Brisa Marinha suave para os cards */
+  --card-text: #0f172a;          /* Texto escuro nos cards */
+  --accent-color: #e5983a;       /* Dourado Pôr do Sol / Terracota */
+  --accent-hover: #cd8229;       /* Hover do botão/dropdown */
+  --dropdown-bg: #0d1322;        /* Fundo escuro da lista suspensa */
+  --footer-bg: #080d1a;          /* Fundo do rodapé */
+  --text-light: #f8fafc;         /* Textos claros gerais */
+  --text-muted: #94a3b8;         /* Textos secundários */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,14 +20,14 @@
 }
 
 body {
-  background-color: #121829;
-  color: #ffffff;
+  background-color: var(--bg-page);
+  color: var(--text-light);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Header Fixo e Transição */
+/* Header Fixo e Transição Fluida */
 .header {
   position: fixed;
   top: 0;
@@ -22,15 +36,21 @@ body {
   z-index: 1000;
   background-color: transparent;
   border-bottom: 1px solid transparent;
-  padding: 15px 0;
-  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  padding: 18px 0;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.4s ease;
 }
 
-/* Estado com Scroll (Fundo Bege) */
+/* Estado com Scroll (Fundo Bege Areia) */
 .header.com-scroll {
-  background-color: #F8F3EA;
+  background-color: rgba(248, 243, 234, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 10px 0;
   border-bottom: 1px solid #ece0c9;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .header-container {
@@ -45,7 +65,11 @@ body {
 .logo img {
   height: 60px;
   object-fit: contain;
-  transition: opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.header.com-scroll .logo img {
+  transform: scale(0.9);
 }
 
 .nav-menu {
@@ -57,14 +81,13 @@ body {
   color: #e2e8f0;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
   color: #38bdf8;
 }
 
-/* Alteração dos Links quando Scrolled */
 .header.com-scroll .nav-menu a {
   color: #121829;
 }
@@ -105,7 +128,7 @@ body {
 }
 
 .btn-entrar:hover {
-  background-color: #7ed0ff;
+  background-color: #38bdf8;
   color: #0f172a;
 }
 
@@ -116,13 +139,13 @@ body {
 
 .header.com-scroll .btn-entrar:hover {
   background-color: #121829;
-  color: #F8F3EA;
+  color: var(--header-scroll-bg);
 }
 
-/* Espaçamento superior para compensar o Header Fixo */
+/* Container do Carrinho */
 .cart-wrapper {
   flex: 1;
-  padding: 100px 20px 40px 20px;
+  padding: 110px 20px 40px 20px;
   max-width: 1000px;
   margin: 0 auto;
   width: 100%;
@@ -146,7 +169,7 @@ body {
 
 .btn-filter {
   background-color: #1e293b;
-  color: #ffffff;
+  color: var(--text-light);
   border: none;
   padding: 8px 24px;
   border-radius: 20px;
@@ -154,7 +177,7 @@ body {
 }
 
 .btn-filter.active {
-  background-color: #F8F3EA;
+  background-color: var(--header-scroll-bg);
   color: #121829;
   font-weight: bold;
 }
@@ -168,14 +191,15 @@ body {
 }
 
 .cart-item-card {
-  background-color: #7ed0ff;
-  color: #121829;
-  border-radius: 10px;
-  padding: 15px 20px;
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  border-radius: 12px;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
   gap: 20px;
   max-width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .item-image {
@@ -186,7 +210,7 @@ body {
   width: 110px;
   height: 140px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 8px;
   display: block;
 }
 
@@ -200,7 +224,7 @@ body {
   font-weight: 600;
   line-height: 1.4;
   margin-bottom: 12px;
-  color: #1e293b;
+  color: #0f172a;
 }
 
 .item-badges {
@@ -209,27 +233,89 @@ body {
   flex-wrap: wrap;
 }
 
-.badge {
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 600;
+/* Custom Dropdown (Tamanho e Quantidade) */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.badge-purple, .badge-teal {
-  background-color: #eca85a;
+.dropdown-toggle {
+  background-color: var(--accent-color);
   color: #ffffff;
-}
-
-.select-badge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 14px;
+  font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 3px 8px rgba(229, 152, 58, 0.3);
+}
+
+.dropdown-toggle:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(205, 130, 41, 0.4);
+}
+
+.dropdown-toggle i {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.custom-dropdown.open .dropdown-toggle i {
+  transform: rotate(180deg);
+}
+
+/* Menu Suspenso Animado */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 100%;
+  background-color: var(--dropdown-bg);
+  border: 1px solid var(--accent-color);
+  border-radius: 12px;
+  padding: 6px 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px) scale(0.96);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.dropdown-option {
+  padding: 9px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-light);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-option:hover {
+  background-color: var(--accent-color);
+  color: #0d1322;
+}
+
+.dropdown-option.active {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.dropdown-option.active:hover {
+  color: #0d1322;
 }
 
 /* Custom Checkbox */
@@ -254,14 +340,14 @@ body {
   left: 0;
   height: 20px;
   width: 20px;
-  background-color: #fff;
+  background-color: #ffffff;
   border: 2px solid #cbd5e1;
   border-radius: 4px;
 }
 
 .custom-checkbox input:checked ~ .checkmark {
-  background-color: #eca85a;
-  border-color: #eca85a;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .checkmark:after {
@@ -286,10 +372,11 @@ body {
 
 /* Card de Resumo */
 .summary-card {
-  background-color: #7ed0ff;
-  color: #000000;
-  border-radius: 10px;
-  padding: 20px;
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .summary-title {
@@ -307,17 +394,62 @@ body {
 
 .selected-thumbs {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
-  max-width: 100%;
+  align-items: center;
 }
 
-.selected-thumbs img {
+.thumb-wrapper {
+  position: relative;
+  display: inline-block;
   width: 70px;
   height: 90px;
+}
+
+.thumb-wrapper img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 4px;
-  border: 1px solid #7ed0ff;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  display: block;
+}
+
+/* --- BADGES NAS MINIATURAS DO RESUMO --- */
+.thumb-badge {
+  position: absolute;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  z-index: 5;
+}
+
+/* Badge de Tamanho (Canto superior esquerdo - Sempre visível) */
+.thumb-badge-size {
+  top: -6px;
+  left: -6px;
+  background-color: var(--bg-page);
+  color: #ffffff;
+  border: 1.5px solid var(--accent-color);
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 22px;
+  height: 20px;
+}
+
+/* Badge de Quantidade (Canto superior direito - Apenas se > 1) */
+.thumb-badge-qty {
+  top: -6px;
+  right: -6px;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border: 1.5px solid var(--bg-page);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
 }
 
 .price-box {
@@ -334,7 +466,7 @@ body {
 .price-tag {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #121829;
+  color: #0f172a;
   margin: 5px 0 15px 0;
 }
 
@@ -349,7 +481,7 @@ body {
   margin-bottom: 8px;
 }
 
-/* Grid das Bandeiras (5 colunas no desktop = 5 em cima, 5 em baixo) */
+/* Grid das Bandeiras (5 colunas) */
 .payment-grid {
   display: grid;
   grid-template-columns: repeat(5, 50px);
@@ -384,7 +516,7 @@ body {
 
 /* Footer */
 .footer {
-  background-color: #0f172a;
+  background-color: var(--footer-bg);
   border-top: 1px solid #1e293b;
   padding: 40px 0 20px 0;
   margin-top: auto;
@@ -406,7 +538,7 @@ body {
 }
 
 .footer-brand p {
-  color: #94a3b8;
+  color: var(--text-muted);
   margin-top: 10px;
   max-width: 250px;
   font-size: 0.9rem;
@@ -431,14 +563,14 @@ body {
 }
 
 .footer-links a {
-  color: #94a3b8;
+  color: var(--text-muted);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.2s;
 }
 
 .footer-links a:hover {
-  color: #7ed0ff;
+  color: #38bdf8;
 }
 
 .footer-bottom {
@@ -521,4 +653,82 @@ body {
     width: 100%;
     height: 28px;
   }
+}
+
+/* Caixa de tamanho na cor escura do menu interno */
+.item-size-dropdown .dropdown-toggle {
+  background-color: var(--dropdown-bg);   /* Cor escura (#0d1322) do menu interno */
+  color: var(--text-light);               /* Texto claro */
+  border: 1px solid var(--accent-color);  /* Borda sutil na cor dourada */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.item-size-dropdown .dropdown-toggle:hover {
+  background-color: #1a243b;               /* Leve iluminação ao passar o mouse */
+  border-color: var(--accent-hover);
+}
+
+/* --- COR INTERNA DO MENU DE QUANTIDADE --- */
+
+/* Fundo do caixa suspensa da Quantidade (mesma cor do botão de clique) */
+.item-qty-dropdown .dropdown-menu {
+  background-color: var(--accent-color);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Opções normais do menu de quantidade */
+.item-qty-dropdown .dropdown-option {
+  color: #ffffff;
+}
+
+/* Efeito ao passar o mouse (fica da cor escura da caixa de tamanho) */
+.item-qty-dropdown .dropdown-option:hover {
+  background-color: var(--dropdown-bg); /* Cor escura do tamanho (#0d1322) */
+  color: var(--text-light);             /* Texto claro */
+}
+
+/* Destaque da opção atualmente ativa na lista */
+.item-qty-dropdown .dropdown-option.active {
+  color: #0d1322;
+  font-weight: 800;
+}
+
+.item-qty-dropdown .dropdown-option.active:hover {
+  color: var(--accent-color);
+}
+
+/* --- CAIXA INTERNA DA ROUPA (TOM CLARO COM EFEITO FLUTUANTE) --- */
+
+/* Moldura clara de estúdio na foto grande */
+.item-image {
+  background-color: #cbe3f7; /* Bege/Areia suave que combina com a marca */
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06); /* Suave profundidade para dentro da caixa */
+}
+
+/* Sombra projetada na imagem para dar a sensação de flutuar */
+.item-image img {
+  border-radius: 8px;
+  box-shadow: 0 12px 22px -4px rgba(18, 24, 41, 0.25),
+              0 4px 8px -2px rgba(18, 24, 41, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Moldura clara nas miniaturas (lá embaixo no resumo) */
+.thumb-wrapper {
+  background-color: #cbe3f7;
+  padding: 4px;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Sombra da miniatura flutuando */
+.thumb-wrapper img {
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 6px 14px rgba(18, 24, 41, 0.22);
 }
