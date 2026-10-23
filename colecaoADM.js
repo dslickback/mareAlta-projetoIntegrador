@@ -271,6 +271,22 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
+    const menuToggleBtn = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    if (menuToggleBtn && navMenu) {
+        menuToggleBtn.addEventListener("click", event => {
+            event.stopPropagation();
+            navMenu.classList.toggle("active");
+        });
+
+        document.addEventListener("click", event => {
+            if (!navMenu.contains(event.target) && !menuToggleBtn.contains(event.target)) {
+                navMenu.classList.remove("active");
+            }
+        });
+    }
+
     criarTags();
     renderProdutos();
     atualizarFooter();
