@@ -71,7 +71,13 @@
                 <li><a href="#contato">Contato</a></li>
             </ul>
             <div class="acoes-navegacao">
-                <a href="#" class="botao-entrar">Entrar</a>
+                <a href="#" class="botao-entrar" id="btn-entrar-nav">Entrar</a>
+                
+                <!-- Foto de Perfil (Invisível até o login) -->
+                <a href="perfil.html" class="btn-perfil-header" id="btn-perfil-nav" style="display: none;" title="Ver meu perfil">
+                    <img src="https://ui-avatars.com/api/?name=Usuario&background=178195&color=fff" alt="Perfil" class="avatar-mini" id="avatar-img-nav">
+                </a>
+            
                 <a href="carrinho.html" class="icone-carrinho" aria-label="Carrinho de Compras">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
@@ -418,7 +424,7 @@
                         <label for="login-senha">Senha</label>
                         <div class="input-com-icone">
                             <input type="password" id="login-senha" required placeholder="">
-                            <button type="button" class="btn-toggle-senha" aria-label="Mostrar senha">
+                            <button type="button" class="btn-toggle-senha" onclick="toggleMostrarSenha(this)" aria-label="Mostrar senha">
                                 <svg class="icone-olho" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -464,7 +470,7 @@
                         <label for="cad-senha">Senha</label>
                         <div class="input-com-icone">
                             <input type="password" id="cad-senha" required>
-                            <button type="button" class="btn-toggle-senha" aria-label="Mostrar senha">
+                            <button type="button" class="btn-toggle-senha" onclick="toggleMostrarSenha(this)" aria-label="Mostrar senha">
                                 <svg class="icone-olho" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -480,7 +486,7 @@
                         <label for="cad-confirmar">Confirmar Senha</label>
                         <div class="input-com-icone">
                             <input type="password" id="cad-confirmar" required>
-                            <button type="button" class="btn-toggle-senha" aria-label="Mostrar senha">
+                            <button type="button" class="btn-toggle-senha" onclick="toggleMostrarSenha(this)" aria-label="Mostrar senha">
                                 <svg class="icone-olho" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -575,5 +581,15 @@
             setInterval(proximoSlide, 3500);
         });
     </script>
+    <!-- Toast de Notificação de Sucesso -->
+    <div id="toast-sucesso" class="toast-notificacao">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E0BA79" stroke-width="2.5">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <span id="toast-mensagem">Login realizado com sucesso!</span>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
