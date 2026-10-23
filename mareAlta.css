@@ -1071,6 +1071,7 @@ html {
     width: 20px;
     height: 20px;
     transition: color 0.2s;
+    z-index: 5; /* Garante que o botão fica posicionado à frente do campo de entrada */
   }
   
   .btn-toggle-senha:hover {
@@ -1112,3 +1113,69 @@ html {
     border-color: #fa2e2a !important;
     box-shadow: 0 0 0 3px rgba(189, 81, 60, 0.2) !important;
   }
+
+  /* ==========================================================
+   FOTO DE PERFIL NA NAVBAR E TOAST DE SUCCESSO
+   ========================================================== */
+
+/* Foto de Perfil Mini no Cabeçalho */
+.btn-perfil-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  transform: translateX(35px);
+}
+
+#cabecalho-principal.com-scroll .btn-perfil-header {
+  transform: translateX(0);
+}
+
+.btn-perfil-header:hover {
+  transform: scale(1.08);
+}
+
+.avatar-mini {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.4s ease;
+}
+
+#cabecalho-principal.com-scroll .avatar-mini {
+  border-color: #178195;
+}
+
+/* Toast (Mensagem Flutuante de Sucesso) */
+.toast-notificacao {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background-color: #0A436C;
+  color: #ffffff;
+  padding: 16px 26px;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10000;
+  transform: translateY(-120px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+  border: 1px solid #178195;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.toast-notificacao.ativo {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
