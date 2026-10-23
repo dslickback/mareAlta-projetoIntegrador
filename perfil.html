@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - Maré Alta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mareAlta.css">
+
+    <style>
+        .secao-perfil {
+            padding: 160px 20px 80px 20px;
+            min-height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #141722;
+        }
+
+        .cartao-perfil-container {
+            background-color: #F8F3EA;
+            color: #222222;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 28px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .cabecalho-perfil-card {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            border-bottom: 1px solid #E1D9CD;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .avatar-grande {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #178195;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+
+        .info-usuario-head h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: #111111;
+            margin-bottom: 5px;
+        }
+
+        .info-usuario-head p {
+            color: #666666;
+            font-size: 15px;
+        }
+
+        .tag-tipo-conta {
+            display: inline-block;
+            margin-top: 8px;
+            background-color: #178195;
+            color: #ffffff;
+            font-size: 12px;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .grid-detalhes-perfil {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .item-detalhe {
+            background-color: #FFFFFF;
+            padding: 18px 22px;
+            border-radius: 16px;
+            border: 1px solid #E1D9CD;
+        }
+
+        .item-detalhe span {
+            display: block;
+            font-size: 12px;
+            color: #888888;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .item-detalhe strong {
+            font-size: 15px;
+            color: #222222;
+        }
+
+        .acoes-perfil-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-voltar-home {
+            color: #0A436C;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .btn-logout {
+            background-color: #D95B43;
+            color: #ffffff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-logout:hover {
+            background-color: #b8432d;
+        }
+    </style>
+</head>
+<body>
+    <header id="cabecalho-principal" class="com-scroll">
+        <nav class="barra-navegacao">
+            <a href="index.html" class="logotipo">
+                <img src="meunome.png" alt="Logo Maré Alta" class="imagem-logo">
+            </a>
+            <ul class="links-navegacao">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="colecao.html">Coleção</a></li>
+                <li><a href="Sobre.html">Sobre</a></li>                
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+            <div class="acoes-navegacao">
+                <a href="perfil.html" class="btn-perfil-header" id="btn-perfil-nav">
+                    <img src="https://ui-avatars.com/api/?name=Usuario&background=178195&color=fff" alt="Perfil" class="avatar-mini" id="avatar-img-nav">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="secao-perfil">
+        <div class="cartao-perfil-container">
+            <div class="cabecalho-perfil-card">
+                <img src="" alt="Foto de Perfil" id="perfil-foto-lg" class="avatar-grande">
+                <div class="info-usuario-head">
+                    <h1 id="perfil-nome">Carregando...</h1>
+                    <p id="perfil-email">...</p>
+                    <span id="perfil-tipo" class="tag-tipo-conta">Cliente</span>
+                </div>
+            </div>
+
+            <div class="grid-detalhes-perfil">
+                <div class="item-detalhe">
+                    <span>Status da Conta</span>
+                    <strong>Ativa / Verificada</strong>
+                </div>
+                <div class="item-detalhe">
+                    <span>Membro Desde</span>
+                    <strong>2026</strong>
+                </div>
+                <div class="item-detalhe">
+                    <span>Endereço Principal</span>
+                    <strong>Uberlândia - MG</strong>
+                </div>
+            </div>
+
+            <div class="acoes-perfil-footer">
+                <a href="index.html" class="btn-voltar-home">&larr; Voltar para a Loja</a>
+                <button type="button" class="btn-logout" id="btn-sair-conta">Sair da Conta</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+            if (!usuarioLogado) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            document.getElementById('perfil-nome').innerText = usuarioLogado.nome;
+            document.getElementById('perfil-email').innerText = usuarioLogado.email;
+            document.getElementById('perfil-tipo').innerText = usuarioLogado.tipo === 'admin' ? 'Administrador' : 'Cliente VIP';
+            
+            const fotoUrl = usuarioLogado.foto || `https://ui-avatars.com/api/?name=${encodeURIComponent(usuarioLogado.nome)}&background=178195&color=fff`;
+            document.getElementById('perfil-foto-lg').src = fotoUrl;
+            document.getElementById('avatar-img-nav').src = fotoUrl;
+
+            document.getElementById('btn-sair-conta').addEventListener('click', () => {
+                localStorage.removeItem('usuarioLogado');
+                sessionStorage.removeItem('tipoUsuario');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>
